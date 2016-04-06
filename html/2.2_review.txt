@@ -1,0 +1,29 @@
+1. 
+browser-Interprets information request sent by client to server and back again into information readable by humans.
+client-The computer making the request.
+server-A computer network that interprets the request sent by the client and pulls that information from where its stored. It then sends back to the client.
+render-A browser renders code, displaying it in a way that’s readable to humans.
+
+2.
+HTML stands for hypertext markup language, which is a computer language most often used in webpages.
+tag-Start and end tags wrap around the outside of the text that you want to alter with that specific tag. If you want a headline, you’d wrap that text with, for example, <h1></h1>.
+element-An html element includes the start and end takes, with the text you want to alter in the middle.
+node-The computer that is attached to the web, or the network.
+attribute-The specific information that you put in the tag. H1, div, header, etc., are all attributes.
+block element-A block element is an element that separates blocks of text. (I think this helps with changing the style of blocks of text with css?) A div, for example is a block element, as it groups chunks of text together.
+inline element-An inline element is an element that… stays inline! It doesn’t apply to large blocks of text. If you want to make part of a sentence bold or italic, that would be an inline element.
+
+3.
+head-The information that comes at the beginning of the html file, and gives information that the browser will interpret and apply to the whole page. Mostly not displayed to the user (except the title, and maybe other parts that I don’t yet know about!)
+body-This is the text that will be displayed by the browser in the website. It’s the main text.
+p-A paragraph tag. Starts a new paragraph or chunk of text.
+form-A tag that allows the browser to collect user-input information.
+div-Divides text and page elements into sections. (I think this is helpful for css?) Block level.
+span-Also divides page elements into sections, but is inline, not block level.
+select-seful for forms. The user can select from options that you give them (which are nested inside the select tag.)
+h2-Header tag, size 2 of 6.
+ol-Ordered list. The items will be numbered.
+ul-Unordered list. The items will be listed with bullets.
+table-The tag used to wrap around the entire table.
+tr-Used for tables to separate out each row of the table.
+td-Nested inside the tr tag. Will display in the table what is inside this tag.
