@@ -42,6 +42,7 @@ figcaption {
 body {
   max-width: 960px;
   min-width: 300px;
+  margin: 0 auto;
 }
 
 main {
