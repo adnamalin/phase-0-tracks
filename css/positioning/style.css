@@ -1,18 +1,26 @@
-#octopus {
+body {
+
+}
+
+.octopus {
 	margin: 0 auto;
-	padding-top: 10%;
+	padding-top: 60px;*/
 	z-index: -1;
 	position: relative;
+	left: 50%;
 }
 
-#glasses {
-	margin: 0 auto;
+.glasses {
 	z-index: 1;
+	padding-top: 160px;
 	position: absolute;
+	margin-left: 45px;
+	left: 50%;
 }
 
-#hat {
-	margin: 0 auto;
+.hat {
 	z-index: 1;
 	position: absolute;
+	margin-left: -20px;
+	left: 50%;
 }
