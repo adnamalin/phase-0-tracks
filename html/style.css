@@ -1,8 +1,6 @@
 /***********
  Use CSS to add the following to your site.
 
-Padding and border added to at least one element
-Margin added to at least one element
 At least one centered element (a footer message can be nice for this)
 A background image on at least one element
 A different font on at least one element
@@ -17,4 +15,25 @@ An element styled with an ID ***********/
 .copyright {
 	display: block;
 	margin: 0 auto;
+}
+
+h2, h3 {
+padding: 2%;
+border-style: solid;
+border-width: 1px
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+#table {
+	margin: 30px 20px 12px 20px;
+}
+
+footer {
+font-family: 'Oxygen', sans-serif;
+width: 100%;
+position: relative;
+text-align: center;
 }
