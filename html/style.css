@@ -1,20 +1,54 @@
-/***********
- Use CSS to add the following to your site.
-
-Padding and border added to at least one element
-Margin added to at least one element
-At least one centered element (a footer message can be nice for this)
-A background image on at least one element
-A different font on at least one element
-A few elements styled using a class
-A different color for visited links
-An element styled with an ID ***********/
-
 .photo {
 	border-radius: 11px;
+	display: block;
+  	margin-left: 3%;
+}
+
+#papaya {
+	width: 52%;
 }
 
 .copyright {
 	display: block;
 	margin: 0 auto;
+}
+
+h2, h3 {
+padding: 2%;
+border-style: solid;
+border-width: 1px
+}
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+
+a:visited {
+	color: green;
+}
+
+#table {
+	margin: 30px 20px 12px 20px;
+	background-image: url("Thai/Shrimp.jpg");
+	background-repeat: no-repeat;
+	background-position: 17%;
+	background-size: contain;
+}
+
+footer {
+font-family: 'Oxygen', sans-serif;
+width: 100%;
+position: relative;
+text-align: center;
+}
+
+@media print {
+  body {
+    display: block;
+    padding: 5%;
+  }
+  
+  a:visited {
+  	color: black;
+  }
 }
