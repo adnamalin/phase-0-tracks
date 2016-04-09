@@ -1,12 +1,7 @@
 /***********
  Use CSS to add the following to your site.
-
-At least one centered element (a footer message can be nice for this)
-A background image on at least one element
-A different font on at least one element
-A few elements styled using a class
-A different color for visited links
-An element styled with an ID ***********/
+ID, class, bg image.
+A different color for visited links ***********/
 
 .photo {
 	border-radius: 11px;
@@ -27,8 +22,16 @@ body{
 	font-family: 'Raleway', sans-serif;
 }
 
+a:visited {
+	color: green;
+}
+
 #table {
 	margin: 30px 20px 12px 20px;
+	background-image: url("Thai/Shrimp.jpg");
+	background-repeat: no-repeat;
+	background-position: 15%;
+	background-size: contain;
 }
 
 footer {
