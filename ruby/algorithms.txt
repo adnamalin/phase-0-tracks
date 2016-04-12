@@ -1,0 +1,52 @@
+Personal Robot Using Elevator Algorithm
+
+-Receive floor destination from owner
+- Walk up to elevator
+  - When there are two buttons near elevator to signal the elevator to arrive:
+    - If going to a floor above the current floor press the button signaling up
+    - If going to a floor above the current floor press the button signaling down
+  - When there is only one button near elevator to signal the elevator to arrive:
+    - Press the button to signal the elevator to arrive
+- Wait until elevator doors open
+- Confirm elevator is going the directions towards destination floor
+- Walk into elevator
+  - Locate button panel that list all floors
+  - Press the corresponding destination floor
+- Wait until elevator arrives at the destination floor
+  - While waiting:
+    - If there are other people make small talk about sport and weather
+- When elevator arrives at destination floor walk out of elevator
+
+Washing face in the Morning Algorithm
+
+- Get up from bed
+- Walk to bathroom
+- Stand directly in-front of the sink
+- Locate the face wash container
+- Grab face wash container in left hand
+  - Unscrew the face wash container cap with right hand while still holding body of container with left still
+  - Place container cap on the bathroom counter next to sink
+  - Using left hand squeeze the container over right hand until 1/4 inch length of face wash gel is sitting in right hand
+- Place face wash container down on sign next to the cap
+- Use left hand to turn on the faucet with lukewarm water adjust faucet to a small stream setting
+- Place right hand with face wash gel under faucet
+- Place left hand flat on top of right hand
+  - Move left hand in circular motion until the face wash gel has lathered into foam substance
+- Remove both hands from under the faucet and hold in front of body above the sink
+- Lead head forward so it is above the sink
+- Tilt head downwards towards open hands holding face wash foam
+- Place hands with face wash foam facing you onto face
+  - Move both hands in soft circular motion for 1 minute
+- Rinse face of face wash foam
+  - Place both hans, open, and facing upwards under facet
+  - Collect water in hands for 15 sections
+  - Brings hands with collected water towards face
+  - Allow water to contact face and then drip off
+  - Repeat until face wash foam is off of face
+- Turn off faucet
+- Locate dry towel
+  - Use both hands to bring towel towards face
+  - Gently run towel around face until face is dry from water
+- Look at mirror
+- Smile
+- Walk out of bathroom
