@@ -1,10 +1,15 @@
-Decide when floor you would like to go to.
-If given up or down option, Approach elevator and press up button if the floor you want is above you. (more than current floor.)
-Press down button if the floor you want is below you. (less than current floor.)
-When elevator doors open, enter elevator. 
-Press button of the floor you want to go to (how do we decide this?)
-Wait until elevator doors re-open.
-If your floor number is lighted, get off. If not, wait until the floor number you pressed is lit and exit elevator.
+- Decide when floor you would like to go to.
+- Navigate toward elevator buttons.
+- If you are given one button, press it.
+- (Elsif?) If you are given an up or down button option:
+	- Press up button if the desired floor is greater than current floor.
+	- Press down button if the desired floor is less than the current floor.
+- When elevator doors open, enter elevator. 
+- Press corresponding button of the floor number you want to go to.
+- Wait until elevator doors re-open.
+	- If the number you chose is illuminated, exit elevator. 
+	- If not, wait until the floor number you pressed is illuminated and exit elevator.
 
-Taking the purple line
+Taking the purple line from Belmont station
 
+if, otherwise, until 
