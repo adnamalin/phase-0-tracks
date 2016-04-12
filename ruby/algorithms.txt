@@ -1,3 +1,4 @@
+Robot on an elevator!
 - Decide when floor you would like to go to.
 - Navigate toward elevator buttons.
 - If you are given one button, press it.
@@ -6,10 +7,19 @@
 	- Press down button if the desired floor is less than the current floor.
 - When elevator doors open, enter elevator. 
 - Press corresponding button of the floor number you want to go to.
-- Wait until elevator doors re-open.
+- Until elevator doors re-open, wait.
 	- If the number you chose is illuminated, exit elevator. 
 	- If not, wait until the floor number you pressed is illuminated and exit elevator.
 
-Taking the purple line from Belmont station
-
-if, otherwise, until 
+Taking the purple line from Belmont station going north
+- Remove Ventra card from right pocket with right hand
+- Approach turnstiles
+- Tap Ventra card to the right of desired turnstile on illuminated “tap card” apparatus.
+- Wait until apparatus turns green, then enter turnstile. 
+- Ascend stairs marked “Howard Linden Kimball” unless instructed otherwise by CTA notification posters.
+	- Posters may be posted in numerous places. View area before proceeding.
+		- If poster or other notification found, follow instructions.
+- At top of stairs, enter platform. Wait on left side of platform, behind yellow marked hazard area. 
+	- If brown line train arrives, wait.
+	- When purple line train arrives, wait until doors open and enter train.
+-Express north!
