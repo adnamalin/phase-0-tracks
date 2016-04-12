@@ -1,0 +1,10 @@
+Decide when floor you would like to go to.
+If given up or down option, Approach elevator and press up button if the floor you want is above you. (more than current floor.)
+Press down button if the floor you want is below you. (less than current floor.)
+When elevator doors open, enter elevator. 
+Press button of the floor you want to go to (how do we decide this?)
+Wait until elevator doors re-open.
+If your floor number is lighted, get off. If not, wait until the floor number you pressed is lit and exit elevator.
+
+Taking the purple line
+
