@@ -1,0 +1,32 @@
+header, footer{
+  display: block;
+  width: 100%;
+  background-color: lightgray;
+  margin-top: 1%;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+body {
+  text-align: center;
+  background-image: url(http://knightlab.northwestern.edu/wp-content/uploads/2013/04/github-octodex.jpg);
+  background-repeat: repeat;
+  background-size: 20%;
+}
+
+section {
+  background-color: lightblue;
+  display: inline-block;
+  width: 40%;
+  min-height: 1100px;
+  vertical-align: top;
+  padding: 0 2%;
+  margin: 0 1%;
+  border: 2px dashed gray;
+  text-align: left;
+  background-color: rgba(135, 206, 250, .8);
+}
+
+footer {
+  color: white;
+}
