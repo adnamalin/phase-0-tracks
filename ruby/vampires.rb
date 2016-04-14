@@ -43,10 +43,11 @@ until number_employees == 0
         end
 
   end
-
   number_employees -= 1
 
-  puts "Test Results for #{name} is #{vampire_status}"
+  puts "Your name is #{name}, you are #{age} years old, born in #{birth_year}, you have said #{garlic} to garlic bread, and #{insurance} to our insurance policy, you have listed the following allergies: #{allergies}."
+
+  puts "Test Results: #{vampire_status.upcase!}"
   puts "Ready for next employee."
 
 end
