@@ -1,5 +1,3 @@
-
-
 #BEGIN
 #Encrypt Method
 #Ask user what password they would like to encrypt
@@ -10,21 +8,23 @@
 #Print encrypted password
 #END
 
-puts "What do you want to encrypt?"
-enc_password = gets.chomp
+puts "Do you want to encrypt or decrypt?"
+enc_or_dec = gets.chomp
 
-def encrypt(input)
-  index = 0
-    while index < input.length
-      input[index] = input[index].next!
-      index += 1
-    end
-    p input
-end
+if enc_or_dec == "encrypt"
+      puts "What do you want to encrypt?"
+      enc_password = gets.chomp
 
-encrypt(enc_password)
+      def encrypt(input)
+        index = 0
+          while index < input.length
+            input[index] = input[index].next[0]
+            index += 1
+          end
+          p input
+      end
 
-
+      encrypt(enc_password)
 
 #BEGIN
 # Decrypt Method
@@ -37,3 +37,25 @@ encrypt(enc_password)
 #Call index number -1
 #Print decrypted password
 #END
+
+elsif enc_or_dec == "decrypt"
+
+    puts "What do you want to decrypt?"
+    dec_password = gets.chomp
+
+    def decrypt(input)
+
+    abc_code = " abcdefghijklmnopqrstuvwxyz "
+
+      index = 0
+        while index < input.length
+            input[index] = abc_code[abc_code.index(input[index])-1]
+            index += 1
+        end
+        p input
+    end
+    decrypt(dec_password)
+
+else
+  puts "That is not a valid chocie"
+end
