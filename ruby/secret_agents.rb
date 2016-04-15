@@ -1,61 +1,61 @@
-#BEGIN
-#Encrypt Method
-#Ask user what password they would like to encrypt
-#Define password to encrypt
-#Identify index numbers for letters in password
+#BEGIN Encrypt Method
+#Get string from user and store in new variable
+#index through string using.length
 #Any space character remains a space character after encryption
-#Shift letters by one to encrypt
+#Identify index numbers for letters in password
+#Shift letters by one to encrypt using .next
 #Print encrypted password
 #END
 
-puts "Do you want to encrypt or decrypt?"
-enc_or_dec = gets.chomp
+def encrypt(getcrypted)
+  enc_password = String.new
+  for n in 0...getcrypted.length
+    if getcrypted[n] == " "
+       enc_password[n] = " "
+     else
+       enc_password[n] = getcrypted[n].next[0]
+     end
+   end
+   enc_password
+end
 
-if enc_or_dec == "encrypt"
-      puts "What do you want to encrypt?"
-      enc_password = gets.chomp
+#Encrypt Test: EDGE CASES & Space test
+# p encrypt("zed zed")
+# p encrypt("a")
+# p encrypt("z")
+# p encrypt("abc abc")
 
-      def encrypt(input)
-        index = 0
-          while index < input.length
-            input[index] = input[index].next[0]
-            index += 1
-          end
-          p input
-      end
-
-      encrypt(enc_password)
-
-#BEGIN
-# Decrypt Method
-#Ask user what password they would like to decrypt
-#Define password to decrypt
-#Identify index numbers for letters in password
+#BEGIN Decrypt Method
+#Get string from user and store in new variable
+#Store alapabet in variable to use for comparison
+#index through string using.length
 #Any space character remains a space character after encryption
-#Call index on each letter of the password
-#Use index number found to compare with "abcdefghijklmnopqrstuvwxyz"
-#Call index number -1
-#Print decrypted password
+#Identify index numbers for letters in password
+#Using that found index number -1 to get previous letter in index
+#Print encrypted password
 #END
 
-elsif enc_or_dec == "decrypt"
-
-    puts "What do you want to decrypt?"
-    dec_password = gets.chomp
-
-    def decrypt(input)
-
-    abc_code = " abcdefghijklmnopqrstuvwxyz "
-
-      index = 0
-        while index < input.length
-            input[index] = abc_code[abc_code.index(input[index])-1]
-            index += 1
-        end
-        p input
+def decrypt(getcrypted)
+  dec_password = String.new
+  abc_code = "abcdefghijklmnopqrstuvwxyz"
+  for n in 0...getcrypted.length
+    if getcrypted[n] == " "
+       dec_password[n] = " "
+     else
+       dec_password[n] = abc_code[abc_code.index(getcrypted[n])-1]
     end
-    decrypt(dec_password)
-
-else
-  puts "That is not a valid chocie"
+  end
+    dec_password
 end
+
+#Decrypt test: # EDGE CASES & Space test
+# p decrypt("bcd bcd")
+# p decrypt("a")
+# p decrypt("z")
+# p decrypt("bcd bcd")
+
+#Nested Method Call & Why Does it Work
+# p decrypt(encrypt("swordfish"))
+# This works because the decrypt method will run the output of the encrypt method that is nested inbetween. The encrypt output is "txpsegjti" so the final run of this line is decrypt("txpsegjti") which returns "swordfish"
+
+#DRIVER CODE
