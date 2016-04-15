@@ -22,8 +22,9 @@ puts "Would you like to enroll in the company's health insurance plan?"
 	else insurance = false
 	end
 
-true_age = 2016 - vampire_year	
-true_age = vampire_age	
+if vampire_age != 2016 - vampire_year
+	true_age = false
+end		
 
 if true_age && (garlic || insurance)
 	puts "Probably not a vampire."
@@ -43,7 +44,7 @@ allergies = ""
   allergies = gets.chomp.downcase
 
         if allergies == "sunshine"
-            vampire_status = "Probably a vampire."
+            puts "Probably a vampire."
           elsif allergies == "done"
             puts "Got it! Thanks."
           else
