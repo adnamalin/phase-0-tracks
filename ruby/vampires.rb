@@ -22,13 +22,15 @@ puts "Would you like to enroll in the company's health insurance plan?"
 	else insurance = false
 	end
 
-vampire_age = 2016 - vampire_year		
+if vampire_age != 2016 - vampire_year
+	true_age = false
+end		
 
-if vampire_age && (garlic || insurance)
+if true_age && (garlic || insurance)
 	puts "Probably not a vampire."
-elsif !vampire_age && (!garlic || !insurance) 
+elsif !true_age && (!garlic || !insurance) 
 	puts "Probably a vampire."
-elsif !vampire_age && (!garlic && !insurance) 
+elsif !true_age && (!garlic && !insurance) 
 	puts "Almost certainly a vampire."
 elsif vampire_name == "Drake Cula" || "drake cula" || "Drake cula" || "drake Cula" || "Tu Fang" || "tu fang" || "Tu fang" || "tu Fang"
 	puts "Definitely a vampire."
