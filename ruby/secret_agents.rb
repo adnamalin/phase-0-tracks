@@ -1,3 +1,5 @@
+#Mikey's version
+
 #BEGIN Encrypt Method
 #Get string from user
 #index through string using.length
@@ -19,8 +21,8 @@ def encrypt(getcrypted)
 end
 
 #Encrypt Test: EDGE CASES & Space test
-p encrypt("zed zed")
-p encrypt("a")
+# encrypt("zed zed")
+# encrypt("a")
 # p encrypt("z")
 # p encrypt("abc abc")
 
@@ -35,10 +37,18 @@ p encrypt("a")
 #END
 
 def decrypt(getcrypted)
-  abc_code = "abcdefghijklmnopqrstuvwxyz"
+  abc_code = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
   for n in 0...getcrypted.length
     if getcrypted[n] == " "
        getcrypted[n] = " "
+     elsif getcrypted[n] == "a"
+      getcrypted[n] = "z"
+    elsif getcrypted[n] == "A"
+      getcrypted[n] = "Z"
+    elsif getcrypted[n] == "z"
+      getcrypted[n] = "a"
+    elsif getcrypted[n] == "Z"
+      getcrypted[n] = "A"
      else
        getcrypted[n] = abc_code[abc_code.index(getcrypted[n])-1]
     end
@@ -47,13 +57,32 @@ def decrypt(getcrypted)
 end
 
 #Decrypt test: # EDGE CASES & Space test
-p decrypt("bcd bcd")
-p decrypt("a")
+# decrypt("bcd bcd")
+# p decrypt("a")
 # p decrypt("z")
 # p decrypt("bcd bcd")
 
 #Nested Method Call & Why Does it Work
-p decrypt(encrypt("swordfish"))
+# decrypt(encrypt("swordfish"))
 # This works because the decrypt method will run the output of the encrypt method that is nested inbetween. The encrypt output is "txpsegjti" so the final run of this line is decrypt("txpsegjti") which returns "swordfish"
 
 #DRIVER CODE
+
+decision = ""
+until decision == "encrypted" || decision == "decrypted"
+#Ask user if they want to encrypt or decrypt
+puts "Would you like your password encrypted or decrypted?"
+decision = gets.chomp.downcase
+end
+#Ask them for password
+puts "What is your password?"
+psswrd = gets.chomp
+#Decide which method
+#Run method
+#Print results
+if decision == "encrypted" 
+  p encrypt(psswrd)
+else decision == "decrypted"
+  p decrypt(psswrd)
+end
+
