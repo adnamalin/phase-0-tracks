@@ -44,7 +44,7 @@ def decrypt(getcrypted)
     elsif getcrypted[n] == "A"
       getcrypted[n] = "Z"
      else
-       getcrypted[n] = abc_code[abc_code.index(getcrypted[n])-1]
+        getcrypted[n] = abc_code[abc_code.index(getcrypted[n])-1]
     end
   end
    getcrypted
@@ -64,9 +64,9 @@ end
 
 decision = ""
 until decision == "encrypted" || decision == "decrypted"
-#Ask user if they want to encrypt or decrypt
-puts "Would you like your password encrypted or decrypted?"
-decision = gets.chomp.downcase
+  #Ask user if they want to encrypt or decrypt
+  puts "Would you like your password encrypted or decrypted?"
+  decision = gets.chomp.downcase
 end
 #Ask them for password
 puts "What is your password?"
@@ -74,8 +74,11 @@ psswrd = gets.chomp
 #Decide which method
 #Run method
 #Print results
-if decision == "encrypted"
-  p encrypt(psswrd)
-else decision == "decrypted"
-  p decrypt(psswrd)
+case decision
+  when "encrypted"
+    p encrypt(psswrd)
+  when "decrypted"
+    p decrypt(psswrd)
 end
+
+puts "Thanks for using our super secret program"
