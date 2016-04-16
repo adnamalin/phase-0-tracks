@@ -43,10 +43,6 @@ def decrypt(getcrypted)
       getcrypted[n] = "z"
     elsif getcrypted[n] == "A"
       getcrypted[n] = "Z"
-    elsif getcrypted[n] == "z"
-      getcrypted[n] = "a"
-    elsif getcrypted[n] == "Z"
-      getcrypted[n] = "A"
      else
        getcrypted[n] = abc_code[abc_code.index(getcrypted[n])-1]
     end
