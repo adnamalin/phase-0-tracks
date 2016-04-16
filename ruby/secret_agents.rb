@@ -52,8 +52,8 @@ end
 
 #Decrypt test: # EDGE CASES & Space test
 # p decrypt("bcd bcd")
-# p decrypt("a")
-# p decrypt("z")
+# p decrypt("aa AA")
+# p decrypt("zz ZZ")
 # p decrypt("bcd bcd")
 
 #Nested Method Call & Why Does it Work
