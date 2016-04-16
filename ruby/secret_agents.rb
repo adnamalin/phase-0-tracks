@@ -1,3 +1,5 @@
+#Mikey's version
+
 #BEGIN Encrypt Method
 #Get string from user and store in new variable
 #index through string using.length
