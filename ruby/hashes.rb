@@ -94,7 +94,7 @@ p print_list(client_info)
 
 #Give user chance to correct a key
 puts "Do you need to correct a key, yes or no?"
-needs_correction = gets.chomp
+needs_correction = gets.chomp.downcase
   #Run appropriate response
   if needs_correction == "yes"
     make_corrections = corrections()
