@@ -11,8 +11,8 @@
 # ------ END
 
 #Method to gather client data
-def client_profile()
-  puts "What is the clents full name?"
+def create_client_hash()
+  puts "What is the client's full name?"
   full_name = gets.chomp.capitalize
 
   puts "What is the clients age"
@@ -76,7 +76,7 @@ def corrections()
 end
 
 #Method to format list output
-def print_list(client_info)
+def print_hash(client_info)
   puts "Client Profile for #{client_info[:Name]}"
   puts "----------------------------"
   client_info.each {|key, value|
@@ -88,9 +88,9 @@ end
 ########### DRIVER CODE ##########
 
 #Ask designer for client information
-client_info = client_profile()
+client_profile = create_client_hash()
 puts "Here is the profile you have entered:"
-p print_list(client_info)
+p print_list(client_profile)
 
 #Give user chance to correct a key
 puts "Do you need to correct a key, yes or no?"
@@ -99,11 +99,11 @@ needs_correction = gets.chomp.downcase
   if needs_correction == "yes"
     make_corrections = corrections()
     #Using array make_corrections to push new key & value into existing hash
-    client_info[make_corrections[0]] = make_corrections[1]
+    client_profile[make_corrections[0]] = make_corrections[1]
   else
     p "Great!"
   end
 
 #Print final results
 puts "Here is the final version for this client's profile:"
-p print_list(client_info)
+p print_hash(client_profile)
