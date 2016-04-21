@@ -1,3 +1,16 @@
+def add_to_array(array, item)
+	array << item
+end
+
+p add_to_array(["a", "b", "c", 1, 2], 3)	
+
+
+def build_array(a, b, c)
+	build_array = [a, b, c]
+end
+
+p build_array(1, "two", nil)
+
 shopping_list = []
 p shopping_list
 
