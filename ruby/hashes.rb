@@ -12,8 +12,13 @@
 
 #Method to gather client data
 def create_client_hash()
-  puts "What is the client's full name?"
-  full_name = gets.chomp.capitalize
+  puts "What is the client's first name?"
+  first_name = gets.chomp.capitalize
+
+  puts "What is the client's last name?"
+  last_name = gets.chomp.capitalize
+
+  full_name = "#{first_name} #{last_name}"
 
   puts "What is the clients age"
   client_age = gets.chomp.to_i
@@ -87,23 +92,31 @@ end
 
 ########### DRIVER CODE ##########
 
+#Allow for entering multiple profiles
+puts "How many profiles would you like to enter?"
+number_of_profiles = gets.chomp.to_i
+number_of_profiles.times do
+
 #Ask designer for client information
-client_profile = create_client_hash()
-puts "Here is the profile you have entered:"
-p print_list(client_profile)
+  client_profile = create_client_hash()
+  puts "Here is the profile you have entered:"
+  p print_hash(client_profile)
 
-#Give user chance to correct a key
-puts "Do you need to correct a key, yes or no?"
-needs_correction = gets.chomp.downcase
-  #Run appropriate response
-  if needs_correction == "yes"
-    make_corrections = corrections()
-    #Using array make_corrections to push new key & value into existing hash
-    client_profile[make_corrections[0]] = make_corrections[1]
-  else
-    p "Great!"
-  end
+  #Give user chance to correct a key
+  puts "Do you need to correct a key, yes or no?"
+  needs_correction = gets.chomp.downcase
+    #Run appropriate response
+    if needs_correction == "yes"
+      make_corrections = corrections()
+      #Using array make_corrections to push new key & value into existing hash
+      client_profile[make_corrections[0]] = make_corrections[1]
+    else
+      p "Great!"
+    end
 
-#Print final results
-puts "Here is the final version for this client's profile:"
-p print_hash(client_profile)
+  #Print final results
+  puts "Here is the final version for this client's profile:"
+  p print_hash(client_profile)
+end
+
+puts "The client(s) profiles have been entered. Thank you. "
