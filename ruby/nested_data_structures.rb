@@ -34,8 +34,7 @@ grocery_store = {
             milk:  [
             	"whole",
             	"skim",
-            	"2%",
-            	"soy"
+            	"2%"
             ],
             yogurt: "greek",
             cheese: [
@@ -46,4 +45,8 @@ grocery_store = {
     }
 }
 
-p grocery_store
+ p grocery_store
+ p grocery_store[:dairy][:dairy_types][:milk].push("soy")
+ p grocery_store[:dairy][:dairy_types][:yogurt][0] = ("skyr")
+ p grocery_store[:meats][:location]
+ p grocery_store[:produce][:potatoes].delete_at(2)
