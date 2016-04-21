@@ -8,10 +8,10 @@
 # Replace original value with new value.
 # Print final hash.
 
-# Create empty hash
+ # Create empty hash
  client = {}
 
-# Obtain multiple pieces of information from the designer about the client 
+ # Obtain multiple pieces of information from the designer about the client 
  puts "What is the client's name?"
  client[:name] = gets.chomp.capitalize
 
@@ -30,5 +30,10 @@
  puts "Are you willing to have a interior design consultation? (y/n)"
  client[:consult] = gets.chomp
 
-# Print hash
-p client
+ # Print hash
+ p client
+
+ # Find out if any of the answers need to be fixed/updated.
+ puts "Would you like to update any information? Please respond with one of the following: 'name', 'address', 'age', 'children', 'decor', or 'consult' or 'none'."
+ change_hash = gets.chomp
+ new_answer = change_hash.to_sym
