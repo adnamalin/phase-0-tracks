@@ -16,3 +16,8 @@ if shopping_list.include?("eggs")
 	puts "Shopping list includes eggs."
 else puts "Shopping list doesn't include eggs."
 end
+
+produce_list = ["broccoli", "carrot", "onion"]
+
+grocery_list = shopping_list + produce_list
+p grocery_list
