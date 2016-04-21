@@ -37,3 +37,23 @@
  puts "Would you like to update any information? Please respond with one of the following: 'name', 'address', 'age', 'children', 'decor', or 'consult' or 'none'."
  change_hash = gets.chomp
  new_answer = change_hash.to_sym
+
+ if new_answer == :name
+	puts "What would you like the new name to be?"
+	client[new_answer] = gets.chomp.capitalize
+elsif new_answer == :age
+	puts "What would you like the new age to be?"
+	client[new_answer] = gets.chomp.to_i
+elsif new_answer == :children
+	puts "How many children does the client have?"
+	client[new_answer] = gets.chomp.to_i
+elsif new_answer == :decor
+	puts "What decor style would the client like?"
+	client[new_answer] = gets.chomp
+elsif new_answer == :consult
+	puts "Would the client like a consultation?"
+	client[new_answer] = gets.chomp
+else puts "Thanks for your input."
+end
+
+p client
