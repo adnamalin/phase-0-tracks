@@ -26,15 +26,20 @@ end
 def next_letter(name)
     char_array = name.split('')
     char_array.map! do |character|
-      if character == " "
-        character = " "
-      elsif character == "a" || character == "e" || character == "i" || character == "o" || character == "u"
-        vowel_index = "aeiou"
-        character = vowel_index[vowel_index.index(character)+1]
-      else
-        consonant_index = "bcdfghjklmnpqrstvwxyz"
-        character = consonant_index[consonant_index.index(character)+1]
-      end
+    #Set up hash to store vowels $ consonants
+     letter = {vowel: "aeiou", consonant: "bcdfghjklmnpqrstvwxyz"}
+    #Set variables to define original index position of the character
+     og_pos_vowel = letter[:vowel].index(character)
+     og_pos_con = letter[:consonant].index(character)
+
+    	if character == " "
+        	character = " "
+    	elsif letter[:vowel].include?(character)
+    		character = letter[:vowel][og_pos_vowel + 1]
+    	elsif letter[:consonant].include?(character)
+    		character = letter[:consonant][og_pos_con + 1]
+    	else character = "?"
+    	end
     end
   new_string_char = char_array.join('')
 end
@@ -54,27 +59,28 @@ end
 def gather_names()
   output = create_hash()
 
-  real_name = ""
+  entry = ""
 
-  while real_name != "quit"
+  while entry != "quit"
     puts "Enter the full name you want to fakeify, type 'quit' when finished."
-    real_name = gets.chomp.downcase
-    reversed_name = reverse(real_name)
+    entry = gets.chomp.downcase
+    reversed_name = reverse(entry)
     changed_letter = next_letter(reversed_name)
     fake_name = capitalize(changed_letter)
+    real_name = capitalize(entry)
     output.store(real_name, fake_name)
-    output.delete_if {|key, value| key == "quit"}
+    output.delete_if {|key, value| key == "Quit"}
   end
   return output
 end
 
-#Method to create emplty hash
+#Method to create empty hash
 def create_hash()
   name_hash = {}
   return name_hash
 end
 
-#Method to formate the final output list of names
+#Method to format the final output list of names
 def print_formatted_names(initial_names)
   puts "Here are the names you have entered:".upcase
   puts "------------------------------------"
