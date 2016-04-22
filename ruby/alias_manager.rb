@@ -6,6 +6,7 @@
   #Take new string and split by characters
   #Have vowels change to next vowel aeiou
   #Have consonant turn into next consonant bcdfghjklmnpqrstvxz
+  #Solve for edgecases: spaces, z, u
   #Have input downcased
   #Method to take final name split it by word into array and capitlize each element then combine back
   #Allow user to keep putting names in until they type 'quit'
@@ -26,8 +27,10 @@ end
 def next_letter(name)
     char_array = name.split('')
     char_array.map! do |character|
-    #Set up hash to store vowels $ consonants
+    #Set up hash to store vowels & consonants
      letter = {vowel: "aeiou", consonant: "bcdfghjklmnpqrstvwxyz"}
+     vowel_holder = letter[:vowel]
+     con_holder = letter[:consonant]
     #Set variables to define original index position of the character
      og_pos_vowel = letter[:vowel].index(character)
      og_pos_con = letter[:consonant].index(character)
@@ -38,11 +41,11 @@ def next_letter(name)
           character = "a"
       elsif character == "z"
           character = "b"
-    	elsif letter[:vowel].include?(character)
-    		character = letter[:vowel][og_pos_vowel + 1]
-    	elsif letter[:consonant].include?(character)
-    		character = letter[:consonant][og_pos_con + 1]
-    	else character = "?"
+    	elsif vowel_holder.include?(character)
+    		character = vowel_holder[og_pos_vowel + 1]
+    	elsif con_holder.include?(character)
+    		character = con_holder[og_pos_con + 1]
+    	else character = "(?)"
     	end
     end
   new_string_char = char_array.join('')
@@ -97,8 +100,7 @@ end
 
 #####DRIVER CODE####
 
-#Ask user for names they want to fakeify
-
+#Ask user for all names they want to fakeify
 get_name_hash = gather_names()
 # p get_name_hash
 
