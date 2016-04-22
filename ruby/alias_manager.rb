@@ -73,8 +73,8 @@ until real_name == "quit"
     if real_name == "quit"
       puts "Done"
     else
-      final_fake_name = ask_for_name(real_name)
+      final_name = ask_for_name(real_name)
     end
 end
 
-p final_fake_name
+p final_name
