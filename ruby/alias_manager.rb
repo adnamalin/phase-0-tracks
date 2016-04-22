@@ -1,17 +1,13 @@
 #BEGIN --------------------
   #Ask user to input name
-
   #Break name into array by words
   #Take name array and swap first and last name
   #Rejoin name into string
-
   #Take new string and split by characters
   #Have vowels change to next vowel aeiou
   #Have consonant turn into next consonant bcdfghjklmnpqrstvxz
-
   #Have input downcased
   #Method to take final name split it by word into array and capitlize each element then combine back
-
   #Allow user to keep putting names in until they type 'quit'
   #Store all fake names entered into a hash
   #Print iterration through hash "new name is actually orginal name"
@@ -59,15 +55,8 @@ def ask_for_name(name)
     reversed_name = reverse(name)
     changed_letter = next_letter(name)
     final_name = capitalize(changed_letter)
-    return inital_hash = {name => final_name}
 end
 
-def create_name_hash(initialhash)
-  initialhash.each do |real, fake|
-  name_hash = {}
-  name_hash.store(real, fake)
-  return name_hash end 
-end
 
 #####DRIVER CODE####
 
@@ -80,9 +69,8 @@ until real_name == "quit"
     if real_name == "quit"
       puts "Done"
     else
-      name_hash_initial = ask_for_name(real_name)
-      final_hash = create_name_hash(name_hash_initial)
+      final_name = ask_for_name(real_name)
     end
 end
 
-p final_hash
+p final_name
