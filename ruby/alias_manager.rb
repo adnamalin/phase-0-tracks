@@ -50,36 +50,46 @@ def capitalize(name)
 end
 # p capitalize(next_letter(reverse("felicia torres")))
 
-#Method to ask for name to fakeify
-def ask_for_name(name)
-  reversed_name = reverse(name)
-  changed_letter = next_letter(name)
-  fake_name = capitalize(changed_letter)
+#Method to gather names for the final output
+def gather_names()
+  output = create_hash()
+
+  real_name = ""
+
+  while real_name != "quit"
+    puts "Enter the full name you want to fakeify, type 'quit' when finished."
+    real_name = gets.chomp.downcase
+    reversed_name = reverse(real_name)
+    changed_letter = next_letter(reversed_name)
+    fake_name = capitalize(changed_letter)
+    output.store(real_name, fake_name)
+    output.delete_if {|key, value| key == "quit"}
+  end
+  return output
 end
 
-def store_names()
+#Method to create emplty hash
+def create_hash()
   name_hash = {}
   return name_hash
+end
+
+#Method to formate the final output list of names
+def print_formatted_names(initial_names)
+  puts "Here are the names you have entered:".upcase
+  puts "------------------------------------"
+  initial_names.each {|key, value|
+    puts "#{key} is also knows as #{value}"
+    puts "----------------"
+  }
 end
 
 #####DRIVER CODE####
 
 #Ask user for names they want to fakeify
-output = store_names()
+get_name_hash = gather_names()
+# p get_name_hash
 
-real_name = ""
-
-while real_name != "quit"
-  puts "Enter the full name you want to fakeify"
-  real_name = gets.chomp.downcase
-  fake_name = ask_for_name(real_name)
-  output.store(real_name, fake_name)
-end
-
-p output
-
-
-  # puts "Enter the full name you want to fakeify"
-  # real_name = gets.chomp.downcase
-  #     fake_name = ask_for_name(real_name)
-  #     entry_array = [real_name, fake_name]
+#Print out all names formatted
+formatted_output = print_formatted_names(get_name_hash)
+p formatted_output
