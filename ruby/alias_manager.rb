@@ -59,15 +59,8 @@ def ask_for_name(name)
     reversed_name = reverse(name)
     changed_letter = next_letter(name)
     final_name = capitalize(changed_letter)
-    return inital_hash = {name => final_name}
 end
 
-def create_name_hash(initialhash)
-  initialhash.each do |real, fake|
-  name_hash = {}
-  name_hash.store(real, fake)
-  return name_hash end 
-end
 
 #####DRIVER CODE####
 
@@ -80,9 +73,8 @@ until real_name == "quit"
     if real_name == "quit"
       puts "Done"
     else
-      name_hash_initial = ask_for_name(real_name)
-      final_hash = create_name_hash(name_hash_initial)
+      final_fake_name = ask_for_name(real_name)
     end
 end
 
-p final_hash
+p final_fake_name
