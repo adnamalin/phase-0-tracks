@@ -18,13 +18,13 @@
 #-------------------- END
 
 #Method to switch first and last name and return a new string
-def reverse_name(name)
+def reverse(name)
   name_array = name.split(' ')
   name_array.reverse!
   new_name_string = name_array.join(' ')
   return new_name_string
 end
-# p reverse_name("Amanda Lin")
+# p reverse("Amanda Lin")
 
 #Method to change vowels and consonants
 def next_letter(name)
@@ -42,25 +42,47 @@ def next_letter(name)
     end
   new_string_char = char_array.join('')
 end
-# p next_letter(reverse_name("felicia torres"))
+# p next_letter(reverse("felicia torres"))
 
 #Method to capitlize the final full name
-def capitalize_name(name)
+def capitalize(name)
   capitalize_array = name.split(' ')
   capitalize_array.map! do |name|
     name.capitalize!
   end
   final_name_string =capitalize_array.join(' ')
 end
+# p capitalize(next_letter(reverse("felicia torres")))
 
-# p capitalize_name(next_letter(reverse_name("felicia torres")))
+#Method to ask for name to fakeify
+def ask_for_name(name)
+    reversed_name = reverse(name)
+    changed_letter = next_letter(name)
+    final_name = capitalize(changed_letter)
+    return inital_hash = {name => final_name}
+end
+
+def create_name_hash(initialhash)
+  initialhash.each do |real, fake|
+  name_hash = {}
+  name_hash.store(real, fake)
+  return name_hash end 
+end
 
 #####DRIVER CODE####
 
-puts "Enter the full name you want to fakeify, type 'quit' when you are finished"
-real_name = gets.chomp.downcase
+#Ask user for names they want to fakeify
+real_name = ""
 
 until real_name == "quit"
-
-
+  puts "Enter the full name you want to fakeify, type 'quit' when you are finished"
+  real_name = gets.chomp.downcase
+    if real_name == "quit"
+      puts "Done"
+    else
+      name_hash_initial = ask_for_name(real_name)
+      final_hash = create_name_hash(name_hash_initial)
+    end
 end
+
+p final_hash
