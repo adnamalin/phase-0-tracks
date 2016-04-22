@@ -84,9 +84,11 @@ def print_formatted_names(initial_names)
   }
 end
 
+
 #####DRIVER CODE####
 
 #Ask user for names they want to fakeify
+
 get_name_hash = gather_names()
 # p get_name_hash
 
