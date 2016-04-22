@@ -34,6 +34,10 @@ def next_letter(name)
 
     	if character == " "
         	character = " "
+      elsif character == "u"
+          character = "a"
+      elsif character == "z"
+          character = "b"
     	elsif letter[:vowel].include?(character)
     		character = letter[:vowel][og_pos_vowel + 1]
     	elsif letter[:consonant].include?(character)
