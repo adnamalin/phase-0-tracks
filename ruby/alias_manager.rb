@@ -52,25 +52,34 @@ end
 
 #Method to ask for name to fakeify
 def ask_for_name(name)
-    reversed_name = reverse(name)
-    changed_letter = next_letter(name)
-    final_name = capitalize(changed_letter)
+  reversed_name = reverse(name)
+  changed_letter = next_letter(name)
+  fake_name = capitalize(changed_letter)
 end
 
+def store_names()
+  name_hash = {}
+  return name_hash
+end
 
 #####DRIVER CODE####
 
 #Ask user for names they want to fakeify
+output = store_names()
+
 real_name = ""
 
-until real_name == "quit"
-  puts "Enter the full name you want to fakeify, type 'quit' when you are finished"
+while real_name != "quit"
+  puts "Enter the full name you want to fakeify"
   real_name = gets.chomp.downcase
-    if real_name == "quit"
-      puts "Done"
-    else
-      final_name = ask_for_name(real_name)
-    end
+  fake_name = ask_for_name(real_name)
+  output.store(real_name, fake_name)
 end
 
-p final_name
+p output
+
+
+  # puts "Enter the full name you want to fakeify"
+  # real_name = gets.chomp.downcase
+  #     fake_name = ask_for_name(real_name)
+  #     entry_array = [real_name, fake_name]
