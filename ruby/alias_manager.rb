@@ -6,7 +6,7 @@
   #Take new string and split by characters
   #Have vowels change to next vowel aeiou
   #Have consonant turn into next consonant bcdfghjklmnpqrstvxz
-  #Solve for edgecases: spaces, z, u
+  #Solve for edgecases: u, z, spaces
   #Have input downcased
   #Method to take final name split it by word into array and capitlize each element then combine back
   #Allow user to keep putting names in until they type 'quit'
