@@ -6,6 +6,7 @@
   #Take new string and split by characters
   #Have vowels change to next vowel aeiou
   #Have consonant turn into next consonant bcdfghjklmnpqrstvxz
+  #Solve for edgecases: u, z, spaces
   #Have input downcased
   #Method to take final name split it by word into array and capitlize each element then combine back
   #Allow user to keep putting names in until they type 'quit'
@@ -26,15 +27,26 @@ end
 def next_letter(name)
     char_array = name.split('')
     char_array.map! do |character|
-      if character == " "
-        character = " "
-      elsif character == "a" || character == "e" || character == "i" || character == "o" || character == "u"
-        vowel_index = "aeiou"
-        character = vowel_index[vowel_index.index(character)+1]
-      else
-        consonant_index = "bcdfghjklmnpqrstvwxyz"
-        character = consonant_index[consonant_index.index(character)+1]
-      end
+    #Set up hash to store vowels & consonants
+     letter = {vowel: "aeiou", consonant: "bcdfghjklmnpqrstvwxyz"}
+     vowel_holder = letter[:vowel]
+     con_holder = letter[:consonant]
+    #Set variables to define original index position of the character
+     og_pos_vowel = letter[:vowel].index(character)
+     og_pos_con = letter[:consonant].index(character)
+
+    	if character == " "
+        	character = " "
+      elsif character == "u"
+          character = "a"
+      elsif character == "z"
+          character = "b"
+    	elsif vowel_holder.include?(character)
+    		character = vowel_holder[og_pos_vowel + 1]
+    	elsif con_holder.include?(character)
+    		character = con_holder[og_pos_con + 1]
+    	else character = "(?)"
+    	end
     end
   new_string_char = char_array.join('')
 end
@@ -54,27 +66,28 @@ end
 def gather_names()
   output = create_hash()
 
-  real_name = ""
+  entry = ""
 
-  while real_name != "quit"
+  while entry != "quit"
     puts "Enter the full name you want to fakeify, type 'quit' when finished."
-    real_name = gets.chomp.downcase
-    reversed_name = reverse(real_name)
+    entry = gets.chomp.downcase
+    reversed_name = reverse(entry)
     changed_letter = next_letter(reversed_name)
     fake_name = capitalize(changed_letter)
+    real_name = capitalize(entry)
     output.store(real_name, fake_name)
-    output.delete_if {|key, value| key == "quit"}
+    output.delete_if {|key, value| key == "Quit"}
   end
   return output
 end
 
-#Method to create emplty hash
+#Method to create empty hash
 def create_hash()
   name_hash = {}
   return name_hash
 end
 
-#Method to formate the final output list of names
+#Method to format the final output list of names
 def print_formatted_names(initial_names)
   puts "Here are the names you have entered:".upcase
   puts "------------------------------------"
@@ -87,8 +100,7 @@ end
 
 #####DRIVER CODE####
 
-#Ask user for names they want to fakeify
-
+#Ask user for all names they want to fakeify
 get_name_hash = gather_names()
 # p get_name_hash
 
