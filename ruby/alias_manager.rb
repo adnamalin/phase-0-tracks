@@ -113,7 +113,7 @@ def print_formatted_names(initial_names)
   puts "Here are the names you have entered:".upcase
   puts "------------------------------------"
   initial_names.each {|key, value|
-    puts "#{key} is also knows as #{value}"
+    puts "#{key} is also known as #{value}"
     puts "----------------"
   }
 end
