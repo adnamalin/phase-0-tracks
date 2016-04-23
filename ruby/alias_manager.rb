@@ -48,7 +48,7 @@ def next_letter(name)
     	else character = "(?)"
     	end
     end
-  new_string_char = char_array.join('')
+  char_array.join('')
 end
 # p next_letter(reverse("felicia torres"))
 
