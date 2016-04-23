@@ -23,33 +23,54 @@ def reverse(name)
 end
 # p reverse("Amanda Lin")
 
-#Method to change vowels and consonants
-def next_letter(name)
-    char_array = name.split('')
-    char_array.map! do |character|
-    #Set up hash to store vowels & consonants
-     letter = {vowel: "aeiou", consonant: "bcdfghjklmnpqrstvwxyz"}
-     vowel_holder = letter[:vowel]
-     con_holder = letter[:consonant]
-    #Set variables to define original index position of the character
-     og_pos_vowel = letter[:vowel].index(character)
-     og_pos_con = letter[:consonant].index(character)
-
-    	if character == " "
-        	character = " "
-      elsif character == "u"
-          character = "a"
-      elsif character == "z"
-          character = "b"
-    	elsif vowel_holder.include?(character)
-    		character = vowel_holder[og_pos_vowel + 1]
-    	elsif con_holder.include?(character)
-    		character = con_holder[og_pos_con + 1]
-    	else character = "(?)"
-    	end
+#Method to change vowels
+def vowel(letter)
+    vowels = "aeiou"
+      original_index = vowels.index(letter)
+        if letter == " "
+            letter = " "
+        elsif letter == "u"
+            letter = "a"
+        else
+            letter = vowels[original_index+1]
+        end
+        letter
     end
-  char_array.join('')
-end
+# p vowel("e")
+
+#Method to change consonants
+def consonant(letter)
+    consonant = "bcdfghjklmnpqrstvwxyz"
+        original_index = consonant.index(letter)
+        if letter == " "
+            letter = " "
+        elsif letter == "z"
+            letter = "b"
+        else
+            letter = consonant[original_index+1]
+        end
+        letter
+    end
+# p consonant("g")
+
+#Method to change letter
+def next_letter(name)
+  char_array = name.split('')
+  char_array.map! do |character|
+    letter = {vowel: "aeiou", consonant: "bcdfghjklmnpqrstvwxyz"}
+    vowel_holder = letter[:vowel]
+    con_holder = letter[:consonant]
+      if character == " "
+          character = " "
+      elsif vowel_holder.include?(character)
+        character = vowel(character)
+      elsif con_holder.include?(character)
+        character = consonant(character)
+      else character = "(?)"
+      end
+    end
+    char_array.join('')
+  end
 # p next_letter(reverse("felicia torres"))
 
 #Method to capitlize the final full name
@@ -76,7 +97,6 @@ def gather_names()
     fake_name = capitalize(changed_letter)
     real_name = capitalize(entry)
     output.store(real_name, fake_name)
-    output.delete_if {|key, value| key == "Quit"}
   end
   return output
 end
@@ -87,8 +107,9 @@ def create_hash()
   return name_hash
 end
 
-#Method to format the final output list of names
+#Method to format the final output list of names & remove quit
 def print_formatted_names(initial_names)
+  initial_names.delete_if {|key, value| key == "Quit"}
   puts "Here are the names you have entered:".upcase
   puts "------------------------------------"
   initial_names.each {|key, value|
