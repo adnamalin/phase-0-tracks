@@ -17,15 +17,15 @@ class Pikachu
   attr_accessor :name, :hometown, :age
 
   def initialize(name, hometown, age)
-    @name = name
-    @hometown = hometown
+    @name = name.capitalize
+    @hometown = hometown.capitalize
     @age = age
     @type = "electric"
     @attacks = ["Thundershock", "Growl", "Wild Charge"]
   end
 
   def attack
-    p " #{name} uses: #{@attack.sample}"
+    puts "#{name} uses: #{@attacks.sample}"
   end
 
   def speak
@@ -33,14 +33,39 @@ class Pikachu
   end
 
   def age_convert(poke_age)
-    human_age = poke_age * 9
+    poke_age * 9
   end
 
+  def format_pikachus
+    "#{name} lives in #{hometown} and is #{age} years old. #{name}'s' favorite attack is #{@attacks.sample}"
+  end
 end
 
-# pika = Pikachu.new("fred", "Johto", 10)
-# p pika.name
-# p pika.type
-# p pika.attacks
-# p pika.hometown
-# p pika.age
+def print_list(list)
+  list.each {|profile|
+    puts profile
+    puts "--------------"}
+end
+#Testing:
+  # pika = Pikachu.new("fred", "Johto", 10)
+  # p pika.name
+  # p pika.type
+  # p pika.attacks
+  # p pika.hometown
+  # p pika.age
+  # pika.attack
+  # pika.speak
+  # p pika.age_convert(10)
+
+puts "How many Pikachus do you want to create?"
+number_of_pikas = gets.chomp.to_i
+
+pikachu_list = []
+number_of_pikas.times do
+  puts "Enter Pikachus: name hometown age"
+    profile = gets.chomp.split(' ')
+  pikachu_list << Pikachu.new(profile[0], profile [1], profile[2].to_i).format_pikachus
+end
+
+puts "Here are your Pikachus:"
+print_list(pikachu_list)
