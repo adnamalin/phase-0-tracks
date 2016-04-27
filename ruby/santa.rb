@@ -2,10 +2,10 @@ class Santa
   attr_reader :ethnicity, :age
   attr_accessor :gender
 
-  def initialize(gender, ethnicity, age)
+  def initialize(gender, ethnicity)
     @gender = gender
     @ethnicity = ethnicity
-    @age = age
+    @age = rand(140)
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
   end
 
@@ -41,7 +41,7 @@ end
   this_many_santas = gets.chomp.to_i
 
   this_many_santas.times {
-    Santa.new(example_genders.sample, example_ethnicities.sample, [*1..140].sample).format}
+    Santa.new(example_genders.sample, example_ethnicities.sample).format}
 
 
 
