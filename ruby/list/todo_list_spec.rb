@@ -1,4 +1,8 @@
-describe TodoList do
+
+
+require_relative 'todo_list'
+
+  describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
   it "initializes with two items" do
