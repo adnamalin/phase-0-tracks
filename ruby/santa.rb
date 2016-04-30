@@ -1,5 +1,9 @@
+# Age isn't adding +1 year because method isn't called?
+
 #create class
 class Santa
+  attr_accessor :gender, :age, :ethnicity
+  
   def initialize(name, suit_color)
     @name = name
     @gender = "lady"
@@ -9,7 +13,7 @@ class Santa
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
   end
-
+  
   def speak
     puts "Ho, ho, ho! Haaaaappy Holidays!"
   end
@@ -50,37 +54,6 @@ class Santa
     @reindeer_ranking.delete(reindeer)
     @reindeer_ranking << (reindeer)
   end
- 
-  # gender getter method
-  def gender
-    @gender
-  end
-  
-  # gender setter method
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-  
-  # age getter method
-   def age
-      @age
-   end  
-  
-  # age setter method
-   def age=(new_age)
-      @age = new_age
-   end
-  
-   # ethnicity getter method
-   def ethnicity
-      @ethnicity
-   end  
-  
-  # ethnicity setter method
-   def ethnicity=(new_ethnicity)
-      @ethnicity = new_ethnicity
-   end
-  
   
 end
 
