@@ -12,15 +12,16 @@
 # takeoff
 # fly in space at some speed - (this will take a boolean variable.)
 
+# release 1 - set up class
 class Spaceship
 	attr_reader :name
 	attr_accessor :propellant_in_gallons, :orbit
 
 
-	def initialize(name, propellant_in_gallons, orbit)
+	def initialize(name)
 		@name
-		@propellant_in_gallons
-		@orbit = ["mars", "venus", "earth", "moon", "some weird black hole thing"]
+		# @propellant_in_gallons = 835958
+		# @orbit = ["mars", "venus", "earth", "moon", "some weird black hole thing"]
 	end
 
 	 def takeoff
@@ -44,8 +45,25 @@ class Spaceship
 	end
 end
 
+# release 2 - user can call multiple instances of spaceship
+puts "How many spaceships would you like to buy?"
+	spaceship_number = gets.chomp.to_i
+
+
+ship_list = []
+ spaceship_number.times do 
+ 	ship_list << Spaceship.new("name")
+end 
+
+p ship_list
+
+  # spaceship_number.times {
+  # 	Spaceship.new.create
+  # }
+
+
 # DRIVER CODE #
-p spaceship = Spaceship.new("Kraken", "835,958", @orbit)
-spaceship.takeoff
-spaceship.land
-spaceship.fly(50)
+# p spaceship = Spaceship.new("Kraken")
+# spaceship.takeoff
+# spaceship.land
+# spaceship.fly(50)
