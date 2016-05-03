@@ -29,6 +29,7 @@ class VirusPredictor
 #Method to predict estimated deaths by population
   def predicted_deaths
     # predicted deaths is solely based on population density
+    #REFRACTOR
     pop_level = @population_density.to_i/50
       if pop_level > 4
         pop_level = 4
@@ -36,7 +37,7 @@ class VirusPredictor
         pop_level = 0.5
       end
     number_of_deaths = @population * (pop_level*0.1)
-
+    #ORIGNAL
     # if @population_density >= 200
     #   number_of_deaths = (@population * 0.4)
     # elsif @population_density >= 150
@@ -70,7 +71,6 @@ class VirusPredictor
     else
       speed += 2.5
     end
-
     puts " and will spread across the state in #{speed} months.\n\n"
 
   end
