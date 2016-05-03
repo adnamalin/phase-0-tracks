@@ -5,7 +5,7 @@
 
 // USE LOOP
 var str = "hello";
-reversedString = ""
+var reversedString = ""
 
 for (i = str.length -1; i >= 0; i --) {
     reversedString += str[i]
@@ -18,7 +18,7 @@ console.log(reversedString)
 // PUT LOOP INTO FUNTION
 
 function reverse(string) {
-  reversedString = ""
+  var reversedString = ""
     for (i = string.length -1; i >= 0; i --)
         {reversedString += string[i]}
     return reversedString
