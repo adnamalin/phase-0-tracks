@@ -15,6 +15,7 @@ console.log(names)
 // Take a color make a value
 // IE: {"bob": blue, "kevin":red, etc...}
 
+horseAndColor = {}
 for (var i = -1; i < names.length -1; i++) {
   horseAndColor[names[i+1]] = colors[i+1]
 }
