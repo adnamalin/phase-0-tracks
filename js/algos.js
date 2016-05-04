@@ -40,7 +40,7 @@ function search(obj1, obj2){
          }
       }
   }
-  console.log(matchFound)
+  return matchFound
 }
 
 /////////////////////// RELEASE 2
@@ -79,20 +79,21 @@ function generate(interger){
 }
 
 /////////////////////// Driver Code
+
 //findLongest Driver Code
-  // findLongest(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup'])
-  // findLongest(['xxxxxxxxxxxxx', 'x','xx', 'xxx', 'xxx', 'xxxx'])
-  // findLongest(['blah', 'blahhher','blahhhhhhhest'])
+  // console.log(findLongest(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup']))
+  // console.log(findLongest(['xxxxxxxxxxxxx', 'x','xx', 'xxx', 'xxx', 'xxxx']))
+  // console.log(findLongest(['blah', 'blahhher','blahhhhhhhest']))
 
 // Search Driver Code
   // console.log("Should be true:")
-  //  search({name: "Amanda", age: 23, ethnicity: "Chinese"},{age: 23, name: "Bob", ethnicity: "Japanese"})
+  //  console.log(search({name: "Amanda", age: 23, ethnicity: "Chinese"},{age: 23, name: "Bob", ethnicity: "Japanese"}))
   // console.log("Should be false:")
-  //   search({dog: "fido", cat: "marigold", hippo: "bob"},
-  //   {cat: "fido", dog: "marigold", giraffe: "bob"})
+  //   console.log(search({dog: "fido", cat: "marigold", hippo: "bob"},
+  //   {cat: "fido", dog: "marigold", giraffe: "bob"}))
   // console.log("Should be true:")
-  //   search({wed: "sunny", mon: "rainy", fri: "hurricane"},
-  //   {fri: "hurricane", tue: "snow", mon: "thunder"})
+  //   console.log(search({wed: "sunny", mon: "rainy", fri: "hurricane"},
+  //   {fri: "hurricane", tue: "snow", mon: "thunder"}))
 
 // Generate strings
   // generate(3)
@@ -100,8 +101,8 @@ function generate(interger){
   // generate(20)
 
 //Feeds generate strings to longestString finder
-for (x = 0; x < 10; x++) {
-  var array = generate(3)
-  console.log(array)
-  console.log('Longest Random String: '+ findLongest(array))
-}
+// for (x = 0; x < 10; x++) {
+//   var array = generate(3)
+//   console.log(array)
+//   console.log('Longest Random String: '+ findLongest(array))
+// }
