@@ -14,7 +14,7 @@ function findLongest(list){
             longestString = list[i];
         }
     }
-  console.log(longestString)
+  return longestString
 }
 
 /////////////////////// RELEASE 1
@@ -74,27 +74,9 @@ function generate(interger){
         var randomword = newword.join('');
         finalarr.push(randomword)
   times++}
-    console.log('Number of random words' + '(' + finalarr.length + ')' + "=")
-    console.log(finalarr)
+    return finalarr
+    // console.log(finalarr)
 }
-
-// function generate(interger) {
-//     finalarr = [];
-//     var alphabetarr = "abcdefghijklmnopqrstuvwxyz".split('')
-//     var newword = [];
-//     for (i = 0; i < interger; i++){
-//         randomlength = Math.floor((Math.random() * 10) + 1);
-//           for (i = 0; i < randomlength; i++) {
-//             randomletter = Math.floor((Math.random() * 25) + 1);
-//             newword.push(alphabetarr[randomletter])
-//             var randomword = newword.join('')
-//           }
-//           finalarr.push(randomword)
-//     }
-//     console.log(finalarr)
-//   }
-//
-//   generate(3)
 
 /////////////////////// Driver Code
 //findLongest Driver Code
@@ -113,6 +95,13 @@ function generate(interger){
   //   {fri: "hurricane", tue: "snow", mon: "thunder"})
 
 // Generate strings
-  generate(3)
-  generate(5)
-  generate(20)
+  // generate(3)
+  // generate(5)
+  // generate(20)
+
+//Feeds generate strings to longestString finder
+for (x = 0; x < 10; x++) {
+  var array = generate(3)
+  console.log(array)
+  console.log('Longest Random String: '+ findLongest(array))
+}
