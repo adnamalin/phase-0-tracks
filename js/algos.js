@@ -1,30 +1,22 @@
 // RELEASE 0
 // Function takes array with string elements
-// Find length of each string elements
-// Compare lengths and identify greatest integer
-// Return the above string element
+// Iterate strings through
+// If string.length is greater than previously set length standard then make string.length the new standard to compare to and store the string into a variable to call
+//Keep iterating through array and strings whill keep going through conditional process
 
-function sort(list){
-  for (var i = list.length -1; i != list.indexOf(list[0]); i--) {
-    if (list[i].length < list[i-1].length) {
-      list.unshift(list.splice(list.indexOf(list[i]), 1).toString());}
-  }
-    console.log(list)
+
+function findLongest(list){
+  var compareToLength = 0;
+  var longestString = "";
+    for(var i=0; i < list.length; i++){
+        if(list[i].length > compareToLength){
+            var compareToLength = list[i].length;
+            longestString = list[i];
+        }
+    }
+  console.log(longestString)
 }
 
-sort(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup'])
-
-
-
-
-// test = ["long phrase","longest phrase","longer phrase"]
-// console.log(test[0]);
-// console.log(test[0].length);
-// console.log(test[0+1].length);
-// console.log(test.indexOf(1))
-// test[1] = test[0]
-// console.log(test)
-
-// console.log(test[1].length > test[2].length)
-// test.push(test.splice(test.indexOf(test[1]), 1).toString())
-// console.log(test)
+findLongest(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup'])
+findLongest(['xxxxxxxxxxxxx', 'x','xx', 'xxx', 'xxx', 'xxxx'])
+findLongest(['blah', 'blahhher','blahhhhhhhest'])
