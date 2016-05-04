@@ -1,9 +1,9 @@
 /////////////////////// RELEASE 0
+// No built in sort function //
 // Function takes array with string elements
 // Iterate strings through
 // If string.length is greater than previously set length standard then make string.length the new standard to compare to and store the string into a variable to call
 //Keep iterating through array and strings whill keep going through conditional process
-
 
 function findLongest(list){
   var compareToLength = 0;
@@ -18,6 +18,7 @@ function findLongest(list){
 }
 
 /////////////////////// RELEASE 1
+//No built in search functions//
 //Take two objects
 //Store matchFound as false to start
 //Iterate through one objects key/pair value store
@@ -42,18 +43,34 @@ function search(obj1, obj2){
   console.log(matchFound)
 }
 
+/////////////////////// RELEASE 2
+//Take interger (x) for arguement
+//Make x number of random words from 1-10 letters longe (loop)
+//Take generated words and add to array (loop)
+
+var alphabetarr = "abcdefghijklmnopqrstuvwxyz".split('')
+
+var newword = [];
+randomlength = Math.floor((Math.random() * 10) + 1);
+for (i = 0; i < randomlength; i++) {
+  randomletter = Math.floor((Math.random() * 25) + 1);
+  newword.push(alphabetarr[randomletter])
+  var randomword = newword.join('')
+}
+console.log(randomword)
+
 /////////////////////// Driver Code
 //findLongest Driver Code
-  findLongest(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup'])
-  findLongest(['xxxxxxxxxxxxx', 'x','xx', 'xxx', 'xxx', 'xxxx'])
-  findLongest(['blah', 'blahhher','blahhhhhhhest'])
+  // findLongest(['hi', 'hey','wazzzzzzzzup', 'hello', 'salutations', 'sup'])
+  // findLongest(['xxxxxxxxxxxxx', 'x','xx', 'xxx', 'xxx', 'xxxx'])
+  // findLongest(['blah', 'blahhher','blahhhhhhhest'])
 
 // Search Driver Code
-  console.log("Should be true:")
-   search({name: "Amanda", age: 23, ethnicity: "Chinese"},{age: 23, name: "Bob", ethnicity: "Japanese"})
-  console.log("Should be false:")
-    search({dog: "fido", cat: "marigold", hippo: "bob"},
-    {cat: "fido", dog: "marigold", giraffe: "bob"})
-  console.log("Should be true:")
-    search({wed: "sunny", mon: "rainy", fri: "hurricane"},
-    {fri: "hurricane", tue: "snow", mon: "thunder"})
+  // console.log("Should be true:")
+  //  search({name: "Amanda", age: 23, ethnicity: "Chinese"},{age: 23, name: "Bob", ethnicity: "Japanese"})
+  // console.log("Should be false:")
+  //   search({dog: "fido", cat: "marigold", hippo: "bob"},
+  //   {cat: "fido", dog: "marigold", giraffe: "bob"})
+  // console.log("Should be true:")
+  //   search({wed: "sunny", mon: "rainy", fri: "hurricane"},
+  //   {fri: "hurricane", tue: "snow", mon: "thunder"})
