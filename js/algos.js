@@ -48,17 +48,6 @@ function search(obj1, obj2){
 //Make x number of random words from 1-10 letters longe (loop)
 //Take generated words and add to array (loop)
 
-// var alphabetarr = "abcdefghijklmnopqrstuvwxyz".split('')
-// var newword = [];
-// var finalarr = [];
-// randomlength = Math.floor((Math.random() * 10) + 1);
-//   for (i = 0; i < randomlength; i++) {
-//     randomletter = Math.floor((Math.random() * 25) + 1);
-//     newword.push(alphabetarr[randomletter])
-//     var randomword = newword.join('')
-//   }
-//  console.log(randomword)
-
 function generate(interger){
   var times = 0;
   var finalarr = [];
