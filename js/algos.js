@@ -101,8 +101,8 @@ function generate(interger){
   // generate(20)
 
 //Feeds generate strings to longestString finder
-// for (x = 0; x < 10; x++) {
-//   var array = generate(3)
-//   console.log(array)
-//   console.log('Longest Random String: '+ findLongest(array))
-// }
+for (x = 0; x < 10; x++) {
+  var array = generate(Math.floor((Math.random() * 10) + 1))
+  console.log(array)
+  console.log('Longest Random String: '+ findLongest(array))
+}
