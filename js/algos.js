@@ -10,7 +10,7 @@ function findLongest(list){
   var longestString = "";
     for(var i=0; i < list.length; i++){
         if(list[i].length > compareToLength){
-            var compareToLength = list[i].length;
+            compareToLength = list[i].length;
             longestString = list[i];
         }
     }
