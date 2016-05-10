@@ -1,5 +1,5 @@
 1. Display the information in one table (either table is fine).
-Command: SELECT * FROM dishes
+Command: SELECT * FROM asian_dishes
       Output:
       id          name         spice_level  vegetarian  cuisine_id
       ----------  -----------  -----------  ----------  ----------
@@ -16,7 +16,7 @@ Command: SELECT * FROM dishes
       11          Papaya Sala  5            TRUE        6
       12          Agedashi To  0            TRUE        2
 
-      Command: SELECT name,spice_level, vegetarian FROM dishes WHERE spice_level >=3;
+      Command: SELECT name,spice_level, vegetarian FROM asian_dishes WHERE spice_level >=3;
       Output:
       name               spice_level  vegetarian
       -----------------  -----------  ----------
@@ -29,8 +29,8 @@ Command: SELECT * FROM dishes
 
 2. Update an item that meets some condition (you can choose a condition that makes sense).
 
-    Command: UPDATE dishes SET spice_level=0  WHERE name="Karekare";
-    Command: SELECT * FROM dishes WHERE name="Karekare";
+    Command: UPDATE asian_dishes SET spice_level=0  WHERE name="Karekare";
+    Command: SELECT * FROM asian_dishes WHERE name="Karekare";
     Output
       id          name        spice_level  vegetarian  cuisine_id
       ----------  ----------  -----------  ----------  ----------
@@ -39,7 +39,7 @@ Command: SELECT * FROM dishes
 
 3. Display the information in both tables using one query.
 
-    Command: SELECT * FROM dishes, cuisine WHERE dishes.cuisine_id = cuisine.id;
+    Command: SELECT * FROM asian_dishes, cuisine WHERE asian_dishes.cuisine_id = cuisine.id;
     Output:
     id          name         spice_level  vegetarian  cuisine_id  id          name
     ----------  -----------  -----------  ----------  ----------  ----------  ----------
@@ -58,7 +58,7 @@ Command: SELECT * FROM dishes
 
 4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
 
-    Command: SELECT dishes.name, dishes.spice_level, dishes.vegetarian, cuisine.name FROM dishes JOIN cuisine ON dishes.cuisine_id = cuisine.id;
+    Command: SELECT asian_dishes.name, asian_dishes.spice_level, asian_dishes.vegetarian, cuisine.name FROM asian_dishes JOIN cuisine ON asian_dishes.cuisine_id = cuisine.id;
     Output:
     name         spice_level  vegetarian  name
     -----------  -----------  ----------  ----------
@@ -77,7 +77,7 @@ Command: SELECT * FROM dishes
 
 5. Delete an item that meets some condition (you can choose a condition that makes sense).
 
-    Command: DELETE FROM dishes WHERE spice_level=2 AND vegetarian="FALSE";
+    Command: DELETE FROM asian_dishes WHERE spice_level=2 AND vegetarian="FALSE";
     Output:
       name         spice_level  vegetarian
       -----------  -----------  ----------
