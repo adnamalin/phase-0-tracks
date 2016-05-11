@@ -1,4 +1,4 @@
-I made two tables (asian_dishes & regions) that used my cuisine table as the foreign key!
+I made two tables (asian_dishes & regions) that used my cuisine table as the foreign key. Then a preference table to practice JOIN on.
 
 1. Display the information in one table (either table is fine).
 Command: SELECT * FROM asian_dishes
@@ -95,3 +95,42 @@ Command: SELECT * FROM asian_dishes
       Gamja Jon    0            TRUE
       Papaya Sala  5            TRUE
       Agedashi To  0            TRUE
+
+
+JOIN Research
+*SQLite does not support RIGHT and FULL OUTER JOINs
+
+    Command: SELECT name, spice_level, rating FROM asian_dishes INNER JOIN preference ON asian_dishes.id = preference.dish_id;
+    Output:
+    name        spice_level  rating
+    ----------  -----------  ----------
+    Karekare    0            Great!
+    Dry Chili   4            Fantastic
+    Agedashi T  0            Okay
+
+
+    Command: SELECT name, spice_level,vegetarian, rating FROM asian_dishes LEFT JOIN preference ON asian_dishes.id = preference.dish_id;
+    Output:
+    name         spice_level  vegetarian  rating
+    -----------  -----------  ----------  ----------
+    Peking Duck  0            False
+    Dry Chili C  4            False       Fantastic
+    Bun Bo Hue   3            False
+    Mapo Tofu    3            True
+    Kimchi       3            True
+    Karekare     0            FALSE       Great!
+    Laksa        5            FALSE
+    Okonomiyaki  0            FALSE
+    Kao Soy      2            FALSE
+    Gamja Jon    0            TRUE
+    Papaya Sala  5            TRUE
+    Agedashi To  0            TRUE        Okay
+
+
+    Command: SELECT name, spice_level,vegetarian, rating FROM asian_dishes LEFT JOIN preference ON asian_dishes.id = preference.dish_id WHERE spice_level > 3;
+    Output:
+    name               spice_level  vegetarian  rating
+    -----------------  -----------  ----------  ----------
+    Dry Chili Chicken  4            False       Fantastic
+    Laksa              5            FALSE
+    Papaya Salad       5            TRUE
