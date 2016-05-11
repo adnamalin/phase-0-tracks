@@ -1,0 +1,14 @@
+You've joined two tables before. How do you join three?
+
+Command:
+Output:
+
+There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+Command:
+Output:
+
+How do you view the data of all three tables for just one particular business?
+
+Command:
+Output: 
