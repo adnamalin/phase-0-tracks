@@ -1,3 +1,5 @@
+I made two tables (asian_dishes & regions) that used my cuisine table as the foreign key!
+
 1. Display the information in one table (either table is fine).
 Command: SELECT * FROM asian_dishes
       Output:
