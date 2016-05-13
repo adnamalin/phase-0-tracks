@@ -1,14 +1,13 @@
 require_relative 'rap_business_logic'
 require_relative 'interface_methods'
 require 'sqlite3'
-#Trying use two different files to run this program. I want to figure out if I can access roomate_db across files without making it a global variable.
 
 #Ask user if they want to work with contact info, or chores
   #Contact info: add roomate, update roomate, or view roomates
   #Chores: add chores, view chores, or update who did it Last
 
 loop do
-  puts puts "----------HOME MENU---------"
+  puts "----------HOME MENU---------"
   puts "Hello there roomate! Do you want to work with: contact info or chores?\nType 'done' when finished"
   decision = gets.chomp.downcase
 break if decision == "done"

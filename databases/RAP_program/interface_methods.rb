@@ -1,4 +1,5 @@
 require_relative 'rap_business_logic'
+#Trying use two different files to run this program. I want to figure out if I can access roomate_db across files without making it a global variable.
 
 def add_roomate_interface
   puts "Add roommate name:"

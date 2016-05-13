@@ -75,6 +75,6 @@ end
 def view_chores
   chores_print = $roomate_db.execute("SELECT * FROM chores")
   chores_print.each do |chore|
-    puts "#{chore['id']}: #{chore['chore']} was last done by #{chore['last_to_do']}"
+    puts "#{chore['id']}: #{chore['chore'].upcase} was last done by #{chore['last_to_do']}"
   end
 end
