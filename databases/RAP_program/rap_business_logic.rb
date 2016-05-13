@@ -5,7 +5,7 @@
   #Who Did It Last (Chores)
     #Users can: View & Update
   #Bills
-    #Users can: View & Update
+    #Users can: View & Add
     #Columns are bill type, rows are months
 
 require 'sqlite3'
@@ -26,6 +26,10 @@ SQL
 $roomate_db.execute(create_contact_table)
 
 #Create method to add roomates
-def add_roomate(roomate_db, name, phone, email)
-  roomate_db.execute("INSERT INTO contact_info (name, phone, email) VALUES (?,?,?)", [name, phone, email])
+def add_roomate(database, name, phone, email)
+  database.execute("INSERT INTO contact_info (name, phone, email) VALUES (?,?,?)", [name, phone, email])
+end
+
+def update_roomate(database, update_name, to_be_updated, new_value)
+  database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE name = '#{update_name}'")
 end
