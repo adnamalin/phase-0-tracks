@@ -16,8 +16,9 @@ def add_roomate_interface
   add_roomate($roomate_db, rm_name, rm_phone, rm_email)
 end
 def update_roomate_interface
-  puts "Who's info do you want to update?"
-  update_name = gets.chomp.downcase.capitalize
+  view_roomates
+  puts "Which number do you want to update?"
+  update_id = gets.chomp.to_i
   puts "What field do you want to update? name, phone, email"
   to_be_updated = gets.chomp.downcase
   puts "Enter in new info:"
@@ -26,6 +27,7 @@ def update_roomate_interface
     else
       new_value = gets.chomp
     end
+   update_roomate($roomate_db, update_id, to_be_updated, new_value)
 end
 def remove_roomate_interface
   view_roomates
@@ -74,7 +76,7 @@ decision = gets.chomp.downcase
       end
 
   when decision = "chores"
-    puts "To add chore type 'add'\nTo update who did a chore last type 'update'\n To remove chore type 'remove'\nTo view chores type 'view'"
+    puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'"
     chore_task = gets.chomp.downcase
       if chore_task == "add"
         add_chore_interface

@@ -38,20 +38,20 @@ def add_roomate(database, name, phone, email)
 end
 
 #Method to update contact info
-def update_roomate(database, update_name, to_be_updated, new_value)
-  database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE name = '#{update_name}'")
+def update_roomate(database, update_id, to_be_updated, new_value)
+  database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE id = #{update_id}")
 end
 
 #Method to remove roomate
 def remove_roomate(database, to_remove)
-  database.execute("DELETE FROM contact_info WHERE name = '#{to_remove}'")
+  database.execute("DELETE FROM contact_info WHERE id = #{to_remove}")
 end
 
 #Method to view roomates
 def view_roomates
    contact_print = $roomate_db.execute("SELECT  * FROM contact_info")
    contact_print.each do |roomate|
-     puts "#{roomate['name']}'s phone number is #{roomate['phone']} and email is #{roomate['email']}"
+     puts "#{roomate['id']}: #{roomate['name']}'s phone number is #{roomate['phone']} and email is #{roomate['email']}"
    end
 end
 
