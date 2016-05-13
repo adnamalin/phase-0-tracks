@@ -27,18 +27,26 @@ def update_roomate_interface
       new_value = gets.chomp
     end
 end
+def remove_roomate_interface
+  view_roomates
+  puts "Who do you want to remove?"
+  to_remove = gets.chomp.downcase.capitalize
+  remove_roomate($roomate_db, to_remove)
+end
 
 puts "Hello there roomate! Do you want to work with contact info or chores today?"
 decision = gets.chomp.downcase
 
   case decision
   when "contact info"
-    puts "Do you want to: add roomate, update, roomate, or view roomates?"
+    puts "Do you want to: add roomate, update, roomate, remove roomate, or view roomates?"
     roomate_task = gets.chomp.downcase
       if roomate_task == "add roomate"
         add_roomate_interface
       elsif roomate_task == "update roomate"
         update_roomate_interface
+      elsif roomate_task == "remove roomate"
+        remove_roomate_interface
       elsif roomate_task == "view roomates"
         view_roomates
       else
