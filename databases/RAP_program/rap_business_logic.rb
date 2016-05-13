@@ -55,7 +55,7 @@ def add_chore(database, chore, last_to_do)
 end
 
 def view_chores
-  chores_print = $roomate_db.execute("SELECT chore, last_to_do FROM chores")
+  chores_print = $roomate_db.execute("SELECT * FROM chores")
   chores_print.each do |chore|
     puts "#{chore['chore']} was last done by #{chore['last_to_do']}"
 end
