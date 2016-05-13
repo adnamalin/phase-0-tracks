@@ -31,8 +31,8 @@ def update_roomate_interface
 end
 def remove_roomate_interface
   view_roomates
-  puts "Who do you want to remove?"
-  to_remove = gets.chomp.downcase.capitalize
+  puts "Which number do you want to remove?"
+  to_remove = gets.chomp.to_i
   remove_roomate($roomate_db, to_remove)
 end
 def add_chore_interface
@@ -62,19 +62,24 @@ loop do
 break if decision == "done"
     case decision
       when "contact info"
-        puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'"
-        roomate_task = gets.chomp.downcase
-          if roomate_task == "add"
-            add_roomate_interface
-          elsif roomate_task == "update"
-            update_roomate_interface
-          elsif roomate_task == "remove"
-            remove_chore_interface
-          elsif roomate_task == "view"
-            view_roomates
-          else
-            puts "Not valid task"
-          end
+        roomate_task = ""
+        while roomate_task != "quit"
+          puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'\nWhen finished type 'quit'"
+          roomate_task = gets.chomp.downcase
+            if roomate_task == "add"
+              add_roomate_interface
+            elsif roomate_task == "update"
+              update_roomate_interface
+            elsif roomate_task == "remove"
+              remove_roomate_interface
+            elsif roomate_task == "view"
+              view_roomates
+            elsif roomate_task == "quit"
+              puts "Returning to Home Selection"
+            else
+              puts "Not valid task"
+            end
+        end
       when decision = "chores"
         puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'"
         chore_task = gets.chomp.downcase
