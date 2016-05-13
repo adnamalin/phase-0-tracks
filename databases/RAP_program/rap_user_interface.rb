@@ -33,28 +33,61 @@ def remove_roomate_interface
   to_remove = gets.chomp.downcase.capitalize
   remove_roomate($roomate_db, to_remove)
 end
+def add_chore_interface
+  puts "Add chore:"
+    input_chore = gets.chomp.downcase.capitalize
+  puts "Who did it last?"
+    input_last_done_by = gets.chomp.downcase.capitalize
+  add_chore($roomate_db, input_chore, input_last_done_by)
+end
+def update_chore_interface
+  puts "What Chore do you want to update?"
+  update_chore = gets.chomp.downcase.capitalize
+  puts "Who did it last?"
+  new_value = gets.chomp.downcase.capitalize
+  update_chore($roomate_db, update_chore, new_value)
+end
+def remove_chore_interface
+  view_chores
+  puts "What number you want to remove?"
+  to_remove = gets.chomp.downcase.capitalize
+  remove_chore($roomate_db, to_remove)
+end
 
-puts "Hello there roomate! Do you want to work with contact info or chores today?"
+puts "Hello there roomate! Do you want to work with: contact info or chores"
 decision = gets.chomp.downcase
 
   case decision
   when "contact info"
-    puts "Do you want to: add roomate, update, roomate, remove roomate, or view roomates?"
+    puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'"
     roomate_task = gets.chomp.downcase
-      if roomate_task == "add roomate"
+      if roomate_task == "add"
         add_roomate_interface
-      elsif roomate_task == "update roomate"
+      elsif roomate_task == "update"
         update_roomate_interface
-      elsif roomate_task == "remove roomate"
-        remove_roomate_interface
-      elsif roomate_task == "view roomates"
+      elsif roomate_task == "remove"
+        remove_chore_interface
+      elsif roomate_task == "view"
         view_roomates
       else
         puts "Not valid task"
       end
 
   when decision = "chores"
-    puts "Start chores loop"
+    puts "To add chore type 'add'\nTo update who did a chore last type 'update'\n To remove chore type 'remove'\nTo view chores type 'view'"
+    chore_task = gets.chomp.downcase
+      if chore_task == "add"
+        add_chore_interface
+      elsif chore_task == "update"
+        update_chore_interface
+      elsif chore_task == "remove"
+        remove_chore_interface
+      elsif chore_task == "view"
+        view_chores
+      else
+        puts "Not valid task"
+      end
+
   else
     puts "I didn't catch that, did you want to work with contact info or chores?"
   end

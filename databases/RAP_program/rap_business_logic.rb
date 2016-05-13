@@ -1,7 +1,7 @@
 #Roomate Accountability Program
 #3 Tables:
   #Contact Info
-    #Users can: View & Update & Delete 
+    #Users can: View & Update & Delete
   #Who Did It Last (Chores)
     #Users can: View & Update
 
@@ -42,7 +42,7 @@ def update_roomate(database, update_name, to_be_updated, new_value)
   database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE name = '#{update_name}'")
 end
 
-#Method to remvoe roomate
+#Method to remove roomate
 def remove_roomate(database, to_remove)
   database.execute("DELETE FROM contact_info WHERE name = '#{to_remove}'")
 end
@@ -65,10 +65,15 @@ def update_chore(database, update_chore, new_value)
   database.execute("UPDATE chores SET last_to_do = '#{new_value}' WHERE chore = '#{update_chore}'")
 end
 
+#Method to remove chore
+def remove_chore(database, to_remove)
+  database.execute("DELETE FROM chores WHERE id = #{to_remove}")
+end
+
 #Method to view chores
 def view_chores
   chores_print = $roomate_db.execute("SELECT * FROM chores")
   chores_print.each do |chore|
-    puts "#{chore['chore']} was last done by #{chore['last_to_do']}"
+    puts "#{chore['id']}: #{chore['chore']} was last done by #{chore['last_to_do']}"
   end
 end
