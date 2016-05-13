@@ -62,8 +62,8 @@ def add_chore(database, chore, last_to_do)
 end
 
 #Method to update who last did the chore
-def update_chore(database, update_chore, new_value)
-  database.execute("UPDATE chores SET last_to_do = '#{new_value}' WHERE chore = '#{update_chore}'")
+def update_chore(database, update_id, new_value)
+  database.execute("UPDATE chores SET last_to_do = '#{new_value}' WHERE id = #{update_id}")
 end
 
 #Method to remove chore

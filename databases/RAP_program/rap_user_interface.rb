@@ -43,8 +43,8 @@ def add_chore_interface
   add_chore($roomate_db, input_chore, input_last_done_by)
 end
 def update_chore_interface
-  puts "What Chore do you want to update?"
-  update_chore = gets.chomp.downcase.capitalize
+  puts "Which Chore number do you want to update?"
+  update_chore = gets.chomp.to_i
   puts "Who did it last?"
   new_value = gets.chomp.downcase.capitalize
   update_chore($roomate_db, update_chore, new_value)
@@ -57,6 +57,7 @@ def remove_chore_interface
 end
 
 loop do
+  puts puts "----------HOME MENU---------"
   puts "Hello there roomate! Do you want to work with: contact info or chores?\nType 'done' when finished"
   decision = gets.chomp.downcase
 break if decision == "done"
@@ -64,8 +65,10 @@ break if decision == "done"
       when "contact info"
         roomate_task = ""
         while roomate_task != "quit"
+          puts "----------MENU---------"
           puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'\nWhen finished type 'quit'"
           roomate_task = gets.chomp.downcase
+          puts "----------RESULTS---------"
             if roomate_task == "add"
               add_roomate_interface
             elsif roomate_task == "update"
@@ -81,18 +84,27 @@ break if decision == "done"
             end
         end
       when decision = "chores"
-        puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'"
-        chore_task = gets.chomp.downcase
-          if chore_task == "add"
-            add_chore_interface
-          elsif chore_task == "update"
-            update_chore_interface
-          elsif chore_task == "remove"
-            remove_chore_interface
-          elsif chore_task == "view"
-            view_chores
-          else
-            puts "Not valid task"
-          end
+        chore_task = ""
+        while chore_task != "quit"
+          puts "----------MENU---------"
+          puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'\n When finished type 'quit'"
+          chore_task = gets.chomp.downcase
+          puts "----------RESULTS---------"
+            if chore_task == "add"
+              add_chore_interface
+            elsif chore_task == "update"
+              update_chore_interface
+            elsif chore_task == "remove"
+              remove_chore_interface
+            elsif chore_task == "view"
+              view_chores
+            elsif chore_task == "quit"
+              puts "Returning to Home Selection"
+            else
+              puts "Not valid task"
+            end
+        end
     end
 end
+
+"Thanks for using the RAP Program!"
