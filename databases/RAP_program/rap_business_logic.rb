@@ -4,9 +4,6 @@
     #Users can: View & Update
   #Who Did It Last (Chores)
     #Users can: View & Update
-  #Bills
-    #Users can: View & Add
-    #Columns are bill type, rows are months
 
 require 'sqlite3'
 
@@ -47,10 +44,18 @@ end
 
 #Method to view roomates
 def view_roomates
-   contact_print = $roomate_db.execute("SELECT * FROM contact_info")
+   contact_print = $roomate_db.execute("SELECT  FROM contact_info")
    contact_print.each do |roomate|
      puts "#{roomate['name']}'s phone number is #{roomate['phone']} and email is #{roomate['email']}"
    end
 end
 
-# def view_chores
+def add_chore(database, chore, last_to_do)
+  database.execute("INSERT INTO chores (chore, last_to_do) VALUES (?,?)", [chore, last_to_do])
+end
+
+def view_chores
+  chores_print = $roomate_db.execute("SELECT chore, last_to_do FROM chores")
+  chores_print.each do |chore|
+    puts "#{chore['chore']} was last done by #{chore['last_to_do']}"
+end
