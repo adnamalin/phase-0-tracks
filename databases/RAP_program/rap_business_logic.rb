@@ -1,7 +1,7 @@
 #Roomate Accountability Program
 #3 Tables:
   #Contact Info
-    #Users can: View & Update
+    #Users can: View & Update & Delete 
   #Who Did It Last (Chores)
     #Users can: View & Update
 
@@ -40,6 +40,11 @@ end
 #Method to update contact info
 def update_roomate(database, update_name, to_be_updated, new_value)
   database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE name = '#{update_name}'")
+end
+
+#Method to remvoe roomate
+def remove_roomate(database, to_remove)
+  database.execute("DELETE FROM contact_info WHERE name = '#{to_remove}'")
 end
 
 #Method to view roomates
