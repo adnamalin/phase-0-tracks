@@ -56,84 +56,38 @@ def remove_chore_interface
   remove_chore($roomate_db, to_remove)
 end
 
-puts "Hello there roomate! Do you want to work with: contact info or chores"
-decision = gets.chomp.downcase
-
-  case decision
-  when "contact info"
-    puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'"
-    roomate_task = gets.chomp.downcase
-      if roomate_task == "add"
-        add_roomate_interface
-      elsif roomate_task == "update"
-        update_roomate_interface
-      elsif roomate_task == "remove"
-        remove_chore_interface
-      elsif roomate_task == "view"
-        view_roomates
-      else
-        puts "Not valid task"
-      end
-
-  when decision = "chores"
-    puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'"
-    chore_task = gets.chomp.downcase
-      if chore_task == "add"
-        add_chore_interface
-      elsif chore_task == "update"
-        update_chore_interface
-      elsif chore_task == "remove"
-        remove_chore_interface
-      elsif chore_task == "view"
-        view_chores
-      else
-        puts "Not valid task"
-      end
-
-  else
-    puts "I didn't catch that, did you want to work with contact info or chores?"
-  end
-
-
-#TESTING ADD ROOMATE
-  # puts "Add roommate name:"
-  # rm_name = gets.chomp
-  # puts "Add roommate phone number (format: ##########):"
-  # rm_phone = gets.chomp.to_i
-  # puts "Add roommate email:"
-  # rm_email= gets.chomp
-  # add_roomate($roomate_db, rm_name, rm_phone, rm_email)
-  #
-  # contact_print = $roomate_db.execute("SELECT * FROM contact_info")
-  # p contact_print
-
-#TESTING UPDATE ROOMATE INFO
-  # puts "Who's info do you want to update?"
-  # update_name = gets.chomp
-  # puts "What field do you want to update? name, phone, email"
-  # to_be_updated = gets.chomp.downcase
-  # puts "Enter in new info:"
-  #   if to_be_updated == "phone"
-  #   new_value = gets.chomp.to_i
-  #   else
-  #     new_value = gets.chomp
-  #   end
-  # update_roomate($roomate_db, update_name, to_be_updated, new_value)
-
-# view_roomates
-
-#TESTING ADD CHORE
-  # puts "Add chore:"
-  # input_chore = gets.chomp
-  # puts "Who did it last?"
-  # input_last_done_by = gets.chomp
-  # add_chore($roomate_db, input_chore, input_last_done_by)
-  # view_chores
-
-#TESTING UPDATE CHORE
-  # puts "What Chore do you want to update?"
-  # update_chore = gets.chomp
-  # puts "Who did it last?"
-  # new_value = gets.chomp
-  # update_chore($roomate_db, update_chore, new_value)
-  # view_chores
+loop do
+  puts "Hello there roomate! Do you want to work with: contact info or chores?\nType 'done' when finished"
+  decision = gets.chomp.downcase
+break if decision == "done"
+    case decision
+      when "contact info"
+        puts "To add roomate type 'add'\nTo update roomate type 'update'\nTo remove roomate type 'remove'\nTo view roomates type 'view'"
+        roomate_task = gets.chomp.downcase
+          if roomate_task == "add"
+            add_roomate_interface
+          elsif roomate_task == "update"
+            update_roomate_interface
+          elsif roomate_task == "remove"
+            remove_chore_interface
+          elsif roomate_task == "view"
+            view_roomates
+          else
+            puts "Not valid task"
+          end
+      when decision = "chores"
+        puts "To add chore type 'add'\nTo update who did a chore last type 'update'\nTo remove chore type 'remove'\nTo view chores type 'view'"
+        chore_task = gets.chomp.downcase
+          if chore_task == "add"
+            add_chore_interface
+          elsif chore_task == "update"
+            update_chore_interface
+          elsif chore_task == "remove"
+            remove_chore_interface
+          elsif chore_task == "view"
+            view_chores
+          else
+            puts "Not valid task"
+          end
+    end
+end

@@ -1,9 +1,6 @@
 #Roomate Accountability Program
-#3 Tables:
-  #Contact Info
-    #Users can: View & Update & Delete
-  #Who Did It Last (Chores)
-    #Users can: View & Update
+#Contact info: add roomate, update roomate, or view roomates
+#Chores: add chores, view chores, or update who did it Last
 
 require 'sqlite3'
 
@@ -32,6 +29,8 @@ $roomate_db.results_as_hash = true
   SQL
   $roomate_db.execute(create_chores_table)
 
+###############Contact Info Methods
+
 #Method to add roomates
 def add_roomate(database, name, phone, email)
   database.execute("INSERT INTO contact_info (name, phone, email) VALUES (?,?,?)", [name, phone, email])
@@ -54,6 +53,8 @@ def view_roomates
      puts "#{roomate['id']}: #{roomate['name']}'s phone number is #{roomate['phone']} and email is #{roomate['email']}"
    end
 end
+
+###############Chore Methods
 
 #Method to add chore
 def add_chore(database, chore, last_to_do)
