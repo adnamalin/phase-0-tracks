@@ -27,5 +27,4 @@ require 'sqlite3'
   #   end
   # update_roomate($roomate_db, update_name, to_be_updated, new_value)
 
-contact_print = $roomate_db.execute("SELECT * FROM contact_info")
-p contact_print
+view_roomates
