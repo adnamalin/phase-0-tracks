@@ -52,3 +52,5 @@ def view_roomates
      puts "#{roomate['name']}'s phone number is #{roomate['phone']} and email is #{roomate['email']}"
    end
 end
+
+# def view_chores
