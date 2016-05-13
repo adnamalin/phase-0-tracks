@@ -6,8 +6,50 @@ require 'sqlite3'
   #Contact info: add roomate, update roomate, or view roomates
   #Chores: add chores, view chores, or update who did it Last
 
-puts "Hello there roomate! Do you want to work with contact info or chores today?"
+def add_roomate_interface
+  puts "Add roommate name:"
+  rm_name = gets.chomp.downcase.capitalize
+  puts "Add roommate phone number (format: ##########):"
+  rm_phone = gets.chomp.to_i
+  puts "Add roommate email:"
+  rm_email= gets.chomp
+  add_roomate($roomate_db, rm_name, rm_phone, rm_email)
+end
+def update_roomate_interface
+  puts "Who's info do you want to update?"
+  update_name = gets.chomp.downcase.capitalize
+  puts "What field do you want to update? name, phone, email"
+  to_be_updated = gets.chomp.downcase
+  puts "Enter in new info:"
+    if to_be_updated == "phone"
+    new_value = gets.chomp.to_i
+    else
+      new_value = gets.chomp
+    end
+end
 
+puts "Hello there roomate! Do you want to work with contact info or chores today?"
+decision = gets.chomp.downcase
+
+  case decision
+  when "contact info"
+    puts "Do you want to: add roomate, update, roomate, or view roomates?"
+    roomate_task = gets.chomp.downcase
+      if roomate_task == "add roomate"
+        add_roomate_interface
+      elsif roomate_task == "update roomate"
+        update_roomate_interface
+      elsif roomate_task == "view roomates"
+        view_roomates
+      else
+        puts "Not valid task"
+      end
+
+  when decision = "chores"
+    puts "Start chores loop"
+  else
+    puts "I didn't catch that, did you want to work with contact info or chores?"
+  end
 
 
 #TESTING ADD ROOMATE
