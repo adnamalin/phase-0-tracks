@@ -50,12 +50,20 @@ def view_roomates
    end
 end
 
+#Method to add chore
 def add_chore(database, chore, last_to_do)
   database.execute("INSERT INTO chores (chore, last_to_do) VALUES (?,?)", [chore, last_to_do])
 end
 
+#Method to update who last did the chore
+def update_chore(database, update_chore, new_value)
+  database.execute("UPDATE chores SET last_to_do = '#{new_value}' WHERE chore = '#{update_chore}'")
+end
+
+#Method to view chores
 def view_chores
   chores_print = $roomate_db.execute("SELECT * FROM chores")
   chores_print.each do |chore|
     puts "#{chore['chore']} was last done by #{chore['last_to_do']}"
+  end
 end
