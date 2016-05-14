@@ -41,11 +41,6 @@ def update_roomate(database, update_id, to_be_updated, new_value)
   database.execute("UPDATE contact_info SET #{to_be_updated} = '#{new_value}' WHERE id = #{update_id}")
 end
 
-#Method to remove roomate
-def remove_roomate(database, to_remove)
-  database.execute("DELETE FROM contact_info WHERE id = #{to_remove}")
-end
-
 #Method to view roomates
 def view_roomates
    contact_print = $roomate_db.execute("SELECT  * FROM contact_info")
@@ -66,15 +61,17 @@ def update_chore(database, update_id, new_value)
   database.execute("UPDATE chores SET last_to_do = '#{new_value}' WHERE id = #{update_id}")
 end
 
-#Method to remove chore
-def remove_chore(database, to_remove)
-  database.execute("DELETE FROM chores WHERE id = #{to_remove}")
-end
-
 #Method to view chores
 def view_chores
   chores_print = $roomate_db.execute("SELECT * FROM chores")
   chores_print.each do |chore|
     puts "#{chore['id']}: #{chore['chore'].upcase} was last done by #{chore['last_to_do']}"
   end
+end
+
+###############Combo Methods
+
+#Method to remove for both task
+def remove_item(database, to_remove, table)
+  database.execute("DELETE FROM #{table} WHERE id = #{to_remove}")
 end
