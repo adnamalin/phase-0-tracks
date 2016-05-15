@@ -2,14 +2,14 @@ require_relative 'rap_business_logic'
 #Trying use two different files to run this program. I want to figure out if I can access roomate_db across files without making it a global variable.
 
 def add_roomate_interface
-  puts "Add roommate name:"
+    puts "Add roommate name:"
     rm_name = gets.chomp.downcase.capitalize
-  puts "Add roommate phone number (format: ##########):"
+    puts "Add roommate phone number (format: ##########):"
     rm_phone = gets.chomp.to_i
-  puts "Add roommate email:"
+    puts "Add roommate email:"
     rm_email= gets.chomp
   add_roomate($roomate_db, rm_name, rm_phone, rm_email)
-  puts "Updated Contact Info:"
+    puts "Updated Contact Info:"
     view_roomates
 end
 
@@ -25,28 +25,28 @@ def update_roomate_interface
       else
         new_value = gets.chomp
       end
-     update_roomate($roomate_db, update_id, to_be_updated, new_value)
+  update_roomate($roomate_db, update_id, to_be_updated, new_value)
    puts "Updated Contact Info:"
-    view_roomates
+  view_roomates
 end
 
 def remove_roomate_interface
   view_roomates
-  puts "Which number do you want to remove?"
-  to_remove = gets.chomp.to_i
-  remove_roomate($roomate_db, to_remove)
-  puts "Updated Contact Info:"
+    puts "Which number do you want to remove?"
+    to_remove = gets.chomp.to_i
+  remove_item($roomate_db, to_remove, "contact_info")
+    puts "Updated Contact Info:"
    view_roomates
 end
 
 def add_chore_interface
-  puts "Add chore:"
+    puts "Add chore:"
     input_chore = gets.chomp.downcase.capitalize
-  puts "Who did it last?"
+    puts "Who did it last?"
     input_last_done_by = gets.chomp.downcase.capitalize
   add_chore($roomate_db, input_chore, input_last_done_by)
-  puts "Updated Chore List:"
-    view_chores
+    puts "Updated Chore List:"
+  view_chores
 end
 
 def update_chore_interface
@@ -57,14 +57,14 @@ def update_chore_interface
     new_value = gets.chomp.downcase.capitalize
   update_chore($roomate_db, update_chore, new_value)
     puts "Updated Chore List:"
-    view_chores
+  view_chores
 end
 
 def remove_chore_interface
   view_chores
-  puts "What number you want to remove?"
-    to_remove = gets.chomp.downcase.capitalize
-  remove_chore($roomate_db, to_remove)
-  puts "Updated Chore List:"
-    view_chores
+    puts "What number you want to remove?"
+      to_remove = gets.chomp.downcase.capitalize
+  remove_item($roomate_db, to_remove, "chores")
+    puts "Updated Chore List:"
+  view_chores
 end
