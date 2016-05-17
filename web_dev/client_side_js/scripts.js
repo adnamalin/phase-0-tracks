@@ -22,3 +22,12 @@ function changefont() {
 
 var button = document.getElementById('button');
 button.addEventListener("click", changefont);
+
+//Create alert box on hover over title
+function popup() {
+  alert("Hello there!");
+}
+
+var head1 = document.getElementById('title');
+console.log(head1)
+head1.addEventListener("mouseover", popup);
