@@ -22,3 +22,21 @@ function changefont() {
 
 var button = document.getElementById('button');
 button.addEventListener("click", changefont);
+
+//Create alert box on hover over title
+function popup() {
+  alert("Hello there! Isn't this annoying?");
+}
+
+var head1 = document.getElementById('title');
+console.log(head1)
+head1.addEventListener("mouseover", popup);
+
+//create mouseover opacity changer for image
+
+function opacitychange(event) {
+  event.target.style.opacity = '0.4';
+  event.target.style.filtet ='alpha(opacity=40)'; //for IE8 and earlier
+}
+
+photo.addEventListener("click", opacitychange)
