@@ -12,7 +12,7 @@ newpara.appendChild(textpara);
 var element = document.getElementById('exampleelement');
 element.appendChild(newpara);
 
-//Event listener - change font upon clicking button
+//Event listener - change font of list items upon clicking button
 function changefont() {
   var list = document.getElementsByTagName('li');
   var index;
