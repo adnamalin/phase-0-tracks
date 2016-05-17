@@ -21,7 +21,7 @@ def update_roomate_interface
     to_be_updated = gets.chomp.downcase
     puts "Enter in new info:"
       if to_be_updated == "phone"
-      new_value = gets.chomp.to_i
+        new_value = gets.chomp.to_i
       else
         new_value = gets.chomp
       end
