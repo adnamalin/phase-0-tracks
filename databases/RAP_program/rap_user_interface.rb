@@ -3,8 +3,8 @@ require_relative 'interface_methods'
 require 'sqlite3'
 
 #Ask user if they want to work with contact info, or chores
-  #Contact info: add roomate, update roomate, or view roomates
-  #Chores: add chores, view chores, or update who did it Last
+  #Contact info: add roomate, update roomate, remove roommate, or view roomates
+  #Chores: add chores, remove chore view chores, or update who did it Last
 
 loop do
   puts "----------HOME MENU---------"
