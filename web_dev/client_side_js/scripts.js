@@ -14,8 +14,10 @@ element.appendChild(newpara);
 
 //Event listener - change font upon clicking button
 function changefont() {
-  var expara = document.getElementById('fontchanging');
-  expara.style.fontFamily = 'Playfair Display';
+  var list = document.getElementsByTagName('li');
+  var index;
+  for (index=0; index < list.length; ++index) {list[index].style.fontFamily = 'Playfair Display';
+  list[index].style.color = 'white';}
 }
 
 var button = document.getElementById('button');
