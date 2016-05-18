@@ -1,5 +1,8 @@
 $(document).ready(function(){
 
+///////Home Page///////
+    
+    
 ///////About Page///////
     
     //table viewer
