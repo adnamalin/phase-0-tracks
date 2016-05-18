@@ -20,8 +20,21 @@ h2{
 }
 
 .subpagebg {
-  background-image: url(images/backgroundpattern.png);
-  background-repeat: repeat;
+    background-image: url(images/backgroundpattern.png);
+    background-repeat: repeat;
+}
+
+.buttons {
+    border-radius:4px;
+    background-color: gray;
+    border: none;
+    font-size: 13px;
+    font-family: 'raleway', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
 }
 
 /**********Heading Area***********/
@@ -153,7 +166,7 @@ footer {
 }
 
 #FavTable {
-  display: block;
+  display: none;
   width: 270px;
   margin: 0 auto;
 }
