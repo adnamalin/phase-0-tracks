@@ -1,13 +1,16 @@
 $(document).ready(function(){
 
-//About Page
+///////About Page///////
+    
+    //table viewer
     $( "button" ).click(function() {
         $("#FavTable").slideToggle("slow");
         $("FavTable").css("display","block");
     });
     
+    //image switcher 
     $("#img1").hover(function() {
-       $(this).attr("src", "images/sillyimage1.png");
+       $(this).attr("src", "images/sillyimage4.png");
     }, function() {
         $(this).attr("src", "images/AmandaLin-Cropped2.jpg");
     });
