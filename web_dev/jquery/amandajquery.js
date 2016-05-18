@@ -1,6 +1,8 @@
 $(document).ready(function(){
-    $("p").css("color", "blue");
-    $("img").css("opacity", .7);
-    $
+//About Page
+    $( "button" ).click(function() {
+        $( "#FavTable" ).slideToggle( "slow" );
+        $("FavTable").css("display","block");
+    });
     
-})
+});
