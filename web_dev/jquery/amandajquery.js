@@ -50,4 +50,16 @@ $(document).ready(function(){
         $(this).attr("src", "myphotos/AmandaLin-Cropped3.jpg");
     });
     
+///////Contact Page///////
+    //Make submit button animat when you hover
+    $("#zoomsubmit").hover(function(){
+        $(this).animate({fontSize: "1.5em"}, "slow");
+        $(this).css("background-color", "#a1e8d9");
+    }, function() {
+        $(this).animate({fontSize: "1em"}, "slow");
+        $(this).css("background-color", "gray");
+           
+    });
+    
+    
 });
