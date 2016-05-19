@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 ///////Home Page///////
+    
     $("#accordion").accordion({
         animate: 500,
         active: false,
@@ -9,10 +10,23 @@ $(document).ready(function(){
         heightStyle: "content"
     });
     
+    //Super simple slideshow on homepage 
+    var headerImages = ["myphotos/headerimage2.jpg","myphotos/headerimage1.png", "myphotos/headerimage3.png"];
+    var focusImage = 1;
+    
+    $("#headerimage").click(function(){
+        var image = headerImages[focusImage];
+        focusImage++;
+        if (focusImage >2) {
+            focusImage=0;
+        }
+        $("#headerimage").attr("src", image);
+    });
+    
 ///////About Page///////
     
     //table viewer
-    $( "button" ).click(function() {
+    $( "#Favorites" ).click(function() {
         $("#FavTable").slideToggle("slow");
         $("FavTable").css("display","block");
     });
