@@ -1,7 +1,13 @@
 $(document).ready(function(){
 
 ///////Home Page///////
-    
+    $("#accordion").accordion({
+        animate: 500,
+        active: false,
+        collapsible: true,
+        event: "click",
+        heightStyle: "content"
+    });
     
 ///////About Page///////
     

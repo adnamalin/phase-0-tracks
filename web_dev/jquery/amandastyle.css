@@ -20,7 +20,7 @@ h2{
 }
 
 .subpagebg {
-  background-image: url(images/backgroundpattern.png);
+  background-image: url(myphotos/backgroundpattern.png);
   background-repeat: repeat;
 }
 
@@ -116,13 +116,12 @@ nav a {
 }
 /**********Main Content***********/
 
-main article {
+.articlespace {
   text-align: center;
 }
 
-
-.articlespace {
-  padding: 20px 20px;
+.p-text {
+    font-size: .8em;
 }
 
 /**********Footer***********/
@@ -154,6 +153,10 @@ footer {
     margin-top: -10px;
   }
 
+#aboutmain, h2,p {
+    text-align: center;
+}
+
 .profilepic {
   border-radius: 100%;
   max-width: 150px;
@@ -167,6 +170,12 @@ footer {
   display: none;
   width: 270px;
   margin: 0 auto;
+}
+
+#photos {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
 }
 
 th, td {
