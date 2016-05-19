@@ -7,9 +7,17 @@
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
+  <p>Click <a href="/campus_request">here</a> to request a city for a DBC expnsion.</p>
   <ul>
     <% @students.each do |student| %>
       <li><%= student['name'] %>, <%= student['age'] %></li>
+    <% end %>
+  </ul>
+
+  <h2>Requested Cities</h2>
+  <ul>
+    <% @request_campuses.each do |request| %>
+      <li><%= request['name'] %> requests: <%= request['city'] %></li>
     <% end %>
   </ul>
 </body>
