@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
 ///////Home Page///////
+    
     $("#accordion").accordion({
         animate: 500,
         active: false,
@@ -25,7 +26,7 @@ $(document).ready(function(){
 ///////About Page///////
     
     //table viewer
-    $( "button" ).click(function() {
+    $( "#Favorites" ).click(function() {
         $("#FavTable").slideToggle("slow");
         $("FavTable").css("display","block");
     });
