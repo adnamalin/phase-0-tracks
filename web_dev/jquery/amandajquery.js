@@ -1,7 +1,13 @@
 $(document).ready(function(){
 
 ///////Home Page///////
-    
+    $("#accordion").accordion({
+        animate: 500,
+        active: false,
+        collapsible: true,
+        event: "click",
+        heightStyle: "content"
+    });
     
 ///////About Page///////
     
@@ -13,21 +19,21 @@ $(document).ready(function(){
     
     //image switcher 
     $("#img1").hover(function() {
-       $(this).attr("src", "images/sillyimage4.png");
+       $(this).attr("src", "myphotos/sillyimage4.png");
     }, function() {
-        $(this).attr("src", "images/AmandaLin-Cropped2.jpg");
+        $(this).attr("src", "myphotos/AmandaLin-Cropped2.jpg");
     });
     
     $("#img2").hover(function() {
-       $(this).attr("src", "images/sillyimage2.png");
+       $(this).attr("src", "myphotos/sillyimage2.png");
     }, function() {
-        $(this).attr("src", "images/AmandaLin-Cropped.png");
+        $(this).attr("src", "myphotos/AmandaLin-Cropped.png");
     });
     
      $("#img3").hover(function() {
-       $(this).attr("src", "images/sillyimage3.png");
+       $(this).attr("src", "myphotos/sillyimage3.png");
     }, function() {
-        $(this).attr("src", "images/AmandaLin-Cropped3.jpg");
+        $(this).attr("src", "myphotos/AmandaLin-Cropped3.jpg");
     });
     
 });
